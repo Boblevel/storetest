@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr RHAFF Digital Store — Produits Numériques</title>
+<meta name="description" content="Boutique en ligne de produits numériques : ebooks, templates, outils digitaux. Paiement sécurisé Orange Money, Moov Money, Wave.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   MR RHAFF DIGITAL STORE — Single File
+   Light / Professional / Clean
+═══════════════════════════════════════════════════ */
+:root {
+  --primary: #1A1A2E;
+  --accent: #D4A843;
+  --accent-light: #F5E6C0;
+  --accent-dark: #B8902E;
+  --white: #FFFFFF;
+  --off-white: #F8F7F4;
+  --light-gray: #F0EEE9;
+  --mid-gray: #E0DDD6;
+  --text: #1A1A2E;
+  --text-mid: #4A4A6A;
+  --text-light: #888899;
+  --green: #2ECC71;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Jost',sans-serif; background:var(--off-white); color:var(--text); line-height:1.6; font-weight:400; }
+a { text-decoration:none; color:inherit; }
+
+/* ── PAGE SWITCHING ── */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ── CONTAINER ── */
+.container { max-width:1140px; margin:0 auto; padding:0 24px; }
+.section-pad { padding:80px 0; }
+.section-label { font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent-dark); margin-bottom:12px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,40px); font-weight:700; color:var(--primary); line-height:1.2; margin-bottom:40px; }
+.section-title span { color:var(--accent-dark); }
+.centered { text-align:center; }
+
+/* ══ NAV ══════════════════════════════════════════ */
+.nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--mid-gray); box-shadow:var(--shadow-sm); }
+.nav-inner { display:flex; align-items:center; gap:32px; padding:0 24px; max-width:1140px; margin:0 auto; height:68px; }
+.logo { display:flex; align-items:center; gap:10px; flex-shrink:0; cursor:pointer; }
+.logo-mark { width:36px; height:36px; background:var(--primary); color:var(--accent); font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.logo-mark.small { width:28px; height:28px; font-size:16px; }
+.logo-text { font-size:15px; font-weight:600; color:var(--primary); line-height:1.2; }
+.logo-text em { display:block; font-style:normal; font-size:11px; font-weight:400; color:var(--text-light); letter-spacing:1px; }
+.nav-links { display:flex; gap:28px; margin-left:auto; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--text-mid); transition:color 0.2s; position:relative; padding-bottom:4px; cursor:pointer; }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--accent); transition:width 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--primary); }
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+.nav-cta { background:var(--primary); color:var(--white); border:none; padding:9px 20px; border-radius:var(--radius-sm); font-family:'Jost',sans-serif; font-size:13px; font-weight:500; cursor:pointer; white-space:nowrap; transition:background 0.2s; flex-shrink:0; }
+.nav-cta:hover { background:var(--accent-dark); }
+.burger { display:none; background:none; border:none; font-size:22px; cursor:pointer; margin-left:auto; color:var(--primary); }
+.mobile-menu { display:none; flex-direction:column; padding:16px 24px; border-top:1px solid var(--mid-gray); background:white; }
+.mobile-menu a { padding:12px 0; font-size:15px; font-weight:500; color:var(--text-mid); border-bottom:1px solid var(--light-gray); cursor:pointer; }
+.mobile-menu.open { display:flex; }
+
+/* ══ BUTTONS ══════════════════════════════════════ */
+.btn-primary { display:inline-block; background:var(--primary); color:var(--white); padding:14px 28px; border-radius:var(--radius-sm); font-size:14px; font-weight:500; transition:all 0.2s; border:none; cursor:pointer; font-family:'Jost',sans-serif; }
+.btn-primary:hover { background:var(--accent-dark); transform:translateY(-1px); box-shadow:0 6px 20px rgba(180,130,0,0.25); }
+.btn-ghost { display:inline-block; color:var(--text-mid); padding:14px 28px; border-radius:var(--radius-sm); font-size:14px; font-weight:500; border:1.5px solid var(--mid-gray); transition:all 0.2s; cursor:pointer; background:none; font-family:'Jost',sans-serif; }
+.btn-ghost:hover { border-color:var(--primary); color:var(--primary); }
+.btn-buy { display:inline-block; background:var(--accent); color:var(--primary); padding:9px 18px; border-radius:var(--radius-sm); font-size:13px; font-weight:600; transition:all 0.2s; white-space:nowrap; cursor:pointer; border:none; font-family:'Jost',sans-serif; }
+.btn-buy:hover { background:var(--accent-dark); color:white; transform:translateY(-1px); }
+
+/* ══ BADGES PAIEMENT ══════════════════════════════ */
+.pay-badges { display:flex; gap:8px; flex-wrap:wrap; }
+.pay-badge { font-size:12px; font-weight:500; padding:5px 12px; border-radius:20px; border:1px solid; }
+.pay-badge.orange { background:#FFF3E0; border-color:#FF9800; color:#E65100; }
+.pay-badge.moov   { background:#E3F2FD; border-color:#2196F3; color:#0D47A1; }
+.pay-badge.wave   { background:#E0F2F1; border-color:#009688; color:#00695C; }
+.pay-badge.card   { background:#F3E5F5; border-color:#9C27B0; color:#4A148C; }
+
+/* ══════════════════════════════════════════════════
+   PAGE ACCUEIL
+══════════════════════════════════════════════════ */
+.hero { position:relative; padding:100px 0 80px; overflow:hidden; background:var(--white); }
+.hero-bg { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.hero-shape { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.5; }
+.hero-shape.s1 { width:500px; height:500px; background:radial-gradient(circle,#F5E6C0 0%,transparent 70%); top:-100px; right:-100px; }
+.hero-shape.s2 { width:300px; height:300px; background:radial-gradient(circle,#E8F4FF 0%,transparent 70%); bottom:0; left:-50px; }
+.hero-shape.s3 { width:200px; height:200px; background:radial-gradient(circle,#F0EEE9 0%,transparent 70%); top:40%; left:30%; }
+.hero-content { position:relative; z-index:1; }
+.hero-badge { display:inline-block; background:var(--accent-light); border:1px solid rgba(212,168,67,0.3); color:var(--accent-dark); font-size:12px; font-weight:600; letter-spacing:1px; padding:7px 16px; border-radius:20px; margin-bottom:24px; animation:fadeUp 0.6s ease both; }
+.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,6vw,64px); font-weight:700; color:var(--primary); line-height:1.1; margin-bottom:20px; max-width:700px; animation:fadeUp 0.7s ease 0.1s both; }
+.hero-title span { color:var(--accent-dark); }
+.hero-desc { font-size:17px; color:var(--text-mid); font-weight:300; line-height:1.7; margin-bottom:36px; max-width:560px; animation:fadeUp 0.7s ease 0.2s both; }
+.hero-actions { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:40px; animation:fadeUp 0.7s ease 0.3s both; }
+.hero-payments { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:13px; color:var(--text-light); animation:fadeUp 0.7s ease 0.4s both; }
+
+.stats-bar { background:var(--primary); padding:28px 0; }
+.stats-inner { display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; }
+.stat { text-align:center; }
+.stat strong { display:block; font-size:26px; font-weight:700; color:var(--accent); font-family:'Cormorant Garamond',serif; }
+.stat span { font-size:12px; color:rgba(255,255,255,0.6); font-weight:300; letter-spacing:1px; text-transform:uppercase; }
+.stat-divider { width:1px; height:40px; background:rgba(255,255,255,0.15); }
+
+.categories { background:var(--off-white); }
+.cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+.cat-card { background:var(--white); border:1px solid var(--mid-gray); border-radius:var(--radius); padding:28px; transition:all 0.3s; position:relative; overflow:hidden; display:block; cursor:pointer; }
+.cat-card::before { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--accent); transform:scaleX(0); transition:transform 0.3s; transform-origin:left; }
+.cat-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--accent); }
+.cat-card:hover::before { transform:scaleX(1); }
+.cat-card.featured { background:var(--primary); border-color:var(--primary); }
+.cat-card.featured h3, .cat-card.featured p, .cat-card.featured .cat-link { color:rgba(255,255,255,0.9); }
+.cat-card.featured .cat-link { color:var(--accent); }
+.cat-badge { position:absolute; top:16px; right:16px; background:var(--accent); color:var(--primary); font-size:10px; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:1px; text-transform:uppercase; }
+.cat-icon { font-size:32px; margin-bottom:16px; }
+.cat-card h3 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--primary); margin-bottom:8px; }
+.cat-card p { font-size:13px; color:var(--text-mid); line-height:1.6; margin-bottom:16px; }
+.cat-link { font-size:13px; font-weight:600; color:var(--accent-dark); }
+
+.how { background:var(--white); }
+.how-steps { display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap; }
+.how-step { flex:1; min-width:200px; background:var(--off-white); border-radius:var(--radius); padding:32px 24px; text-align:center; border:1px solid var(--mid-gray); }
+.how-num { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:700; color:var(--mid-gray); line-height:1; margin-bottom:12px; }
+.how-icon { font-size:28px; margin-bottom:12px; }
+.how-step h3 { font-size:16px; font-weight:600; color:var(--primary); margin-bottom:8px; }
+.how-step p { font-size:13px; color:var(--text-mid); line-height:1.6; }
+.how-arrow { font-size:24px; color:var(--accent); align-self:center; flex-shrink:0; }
+
+.featured-sec { background:var(--off-white); }
+.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; }
+.products-grid.large { grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
+.product-card { background:var(--white); border:1px solid var(--mid-gray); border-radius:var(--radius); overflow:hidden; transition:all 0.3s; position:relative; }
+.product-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.product-img { height:140px; display:flex; align-items:center; justify-content:center; font-size:48px; }
+.ebook-bg    { background:linear-gradient(135deg,#FFF8E1,#FFE082); }
+.template-bg { background:linear-gradient(135deg,#F3E5F5,#CE93D8); }
+.outil-bg    { background:linear-gradient(135deg,#E8F5E9,#A5D6A7); }
+.formation-bg { background:linear-gradient(135deg,#E3F2FD,#90CAF9); }
+.product-body { padding:20px; }
+.product-cat { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent-dark); display:block; margin-bottom:8px; }
+.product-card h3 { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; color:var(--primary); margin-bottom:8px; line-height:1.3; }
+.product-card p { font-size:13px; color:var(--text-mid); line-height:1.5; margin-bottom:12px; }
+.product-features { list-style:none; margin-bottom:16px; }
+.product-features li { font-size:12px; color:var(--text-mid); padding:3px 0; }
+.product-footer { display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding-top:12px; border-top:1px solid var(--light-gray); }
+.product-price { font-size:17px; font-weight:700; color:var(--primary); font-family:'Cormorant Garamond',serif; }
+.product-badge { position:absolute; top:12px; right:12px; background:var(--primary); color:var(--accent); font-size:10px; font-weight:700; padding:4px 10px; border-radius:20px; letter-spacing:0.5px; }
+
+.trust { background:var(--white); }
+.trust-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:24px; }
+.trust-item { padding:28px; background:var(--off-white); border-radius:var(--radius); border:1px solid var(--mid-gray); text-align:center; transition:all 0.3s; }
+.trust-item:hover { border-color:var(--accent); transform:translateY(-2px); }
+.trust-icon { font-size:32px; margin-bottom:12px; }
+.trust-item h4 { font-size:15px; font-weight:600; color:var(--primary); margin-bottom:8px; }
+.trust-item p { font-size:13px; color:var(--text-mid); line-height:1.5; }
+
+.contact-section { background:var(--off-white); }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+.contact-info p { font-size:15px; color:var(--text-mid); line-height:1.7; margin-bottom:28px; }
+.contact-items { display:flex; flex-direction:column; gap:16px; }
+.contact-item { display:flex; align-items:center; gap:14px; background:var(--white); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--mid-gray); }
+.contact-icon { font-size:22px; flex-shrink:0; }
+.contact-item strong { display:block; font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--accent-dark); margin-bottom:2px; }
+.contact-item span { font-size:14px; color:var(--text-mid); }
+.contact-form { display:flex; flex-direction:column; gap:14px; }
+.contact-form input, .contact-form textarea { width:100%; padding:13px 16px; border:1.5px solid var(--mid-gray); border-radius:var(--radius-sm); font-family:'Jost',sans-serif; font-size:14px; color:var(--text); background:var(--white); outline:none; transition:border-color 0.2s; }
+.contact-form input:focus, .contact-form textarea:focus { border-color:var(--accent); }
+
+/* ══════════════════════════════════════════════════
+   PAGE CATALOGUE
+══════════════════════════════════════════════════ */
+.page-hero { background:var(--white); padding:60px 0 48px; border-bottom:1px solid var(--mid-gray); }
+.page-hero.small { padding:44px 0 36px; }
+.page-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,44px); font-weight:700; color:var(--primary); margin-bottom:10px; }
+.page-title span { color:var(--accent-dark); }
+.page-hero p { font-size:15px; color:var(--text-mid); font-weight:300; }
+
+.filters-bar { background:var(--white); border-bottom:1px solid var(--mid-gray); padding:16px 0; position:sticky; top:68px; z-index:50; }
+.filters-bar .container { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.filters { display:flex; gap:8px; flex-wrap:wrap; }
+.filter-btn { padding:8px 16px; border:1.5px solid var(--mid-gray); border-radius:20px; background:none; font-family:'Jost',sans-serif; font-size:13px; font-weight:500; color:var(--text-mid); cursor:pointer; transition:all 0.2s; }
+.filter-btn:hover { border-color:var(--primary); color:var(--primary); }
+.filter-btn.active { background:var(--primary); border-color:var(--primary); color:var(--white); }
+.results-count { font-size:13px; color:var(--text-light); white-space:nowrap; }
+.catalogue-section { background:var(--off-white); }
+
+/* ══════════════════════════════════════════════════
+   PAGE PAIEMENT
+══════════════════════════════════════════════════ */
+.payment-section { background:var(--off-white); }
+.payment-layout { display:grid; grid-template-columns:1fr 380px; gap:40px; align-items:start; }
+.payment-form-box { background:var(--white); border:1px solid var(--mid-gray); border-radius:var(--radius); padding:36px; }
+.form-title { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:700; color:var(--primary); margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid var(--light-gray); }
+.form-group { margin-bottom:20px; }
+.form-group label { display:block; font-size:13px; font-weight:600; color:var(--primary); margin-bottom:8px; letter-spacing:0.3px; }
+.req { color:var(--accent-dark); }
+.form-group input, .form-group select, .form-group textarea { width:100%; padding:13px 16px; border:1.5px solid var(--mid-gray); border-radius:var(--radius-sm); font-family:'Jost',sans-serif; font-size:14px; color:var(--text); background:var(--white); outline:none; transition:border-color 0.2s; appearance:none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(212,168,67,0.1); }
+.form-hint { font-size:12px; color:var(--text-light); margin-top:6px; font-style:italic; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.payment-methods { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.method-option input[type="radio"] { display:none; }
+.method-card { display:flex; align-items:center; gap:10px; padding:12px 16px; border:1.5px solid var(--mid-gray); border-radius:var(--radius-sm); cursor:pointer; transition:all 0.2s; background:var(--off-white); }
+.method-option input:checked + .method-card { border-color:var(--accent); background:var(--accent-light); }
+.method-icon { font-size:20px; }
+.method-name { font-size:13px; font-weight:500; color:var(--primary); }
+.btn-pay { width:100%; background:var(--primary); color:var(--white); border:none; padding:16px; border-radius:var(--radius-sm); font-family:'Jost',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:8px; }
+.btn-pay:hover { background:var(--accent-dark); transform:translateY(-1px); box-shadow:0 8px 24px rgba(180,130,0,0.3); }
+.btn-pay:disabled { opacity:0.7; cursor:not-allowed; transform:none; }
+.pay-note { font-size:12px; color:var(--text-light); text-align:center; margin-top:12px; line-height:1.5; }
+
+.summary-box { background:var(--white); border:1px solid var(--mid-gray); border-radius:var(--radius); padding:24px; margin-bottom:16px; }
+.summary-box h3 { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; color:var(--primary); margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid var(--light-gray); }
+.summary-product { display:flex; align-items:center; gap:14px; margin-bottom:20px; padding:14px; background:var(--off-white); border-radius:var(--radius-sm); }
+.summary-icon { font-size:28px; flex-shrink:0; }
+.summary-name { font-size:14px; font-weight:600; color:var(--primary); margin-bottom:3px; }
+.summary-type { font-size:11px; color:var(--text-light); }
+.summary-divider { height:1px; background:var(--light-gray); margin:14px 0; }
+.summary-line { display:flex; justify-content:space-between; align-items:center; font-size:14px; color:var(--text-mid); margin-bottom:8px; }
+.summary-line.total { font-size:17px; font-weight:700; color:var(--primary); }
+.free { color:var(--green); font-weight:600; }
+.summary-delivery { margin-top:16px; background:rgba(46,204,113,0.08); border:1px solid rgba(46,204,113,0.2); border-radius:var(--radius-sm); padding:10px 14px; font-size:13px; color:var(--text-mid); }
+.trust-box { background:var(--white); border:1px solid var(--mid-gray); border-radius:var(--radius); padding:20px; margin-bottom:16px; }
+.trust-row { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text-mid); padding:8px 0; border-bottom:1px solid var(--light-gray); }
+.trust-row:last-child { border-bottom:none; }
+.trust-row span:first-child { font-size:16px; flex-shrink:0; }
+.pay-logos { background:var(--white); border:1px solid var(--mid-gray); border-radius:var(--radius); padding:16px; }
+.pay-logos-title { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-light); margin-bottom:10px; }
+.pay-logos-row { display:flex; gap:6px; flex-wrap:wrap; }
+
+/* ══ MODAL ════════════════════════════════════════ */
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:999; padding:20px; }
+.modal-box { background:var(--white); border-radius:var(--radius); padding:40px; max-width:400px; width:100%; text-align:center; box-shadow:var(--shadow-lg); }
+.modal-icon { font-size:52px; margin-bottom:16px; }
+.modal-box h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:700; color:var(--primary); margin-bottom:12px; }
+.modal-box p { font-size:14px; color:var(--text-mid); line-height:1.6; }
+
+/* ══ FOOTER ═══════════════════════════════════════ */
+.footer { background:var(--primary); color:rgba(255,255,255,0.8); }
+.footer-inner { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:32px; padding-top:48px; padding-bottom:40px; }
+.footer-brand .footer-name { font-size:15px; font-weight:600; color:var(--white); margin:8px 0 4px; display:block; }
+.footer-brand p { font-size:12px; color:rgba(255,255,255,0.4); }
+.footer-links { display:flex; flex-direction:column; gap:10px; }
+.footer-links a { font-size:14px; color:rgba(255,255,255,0.6); transition:color 0.2s; cursor:pointer; }
+.footer-links a:hover { color:var(--accent); }
+.footer-pay { font-size:13px; color:rgba(255,255,255,0.5); text-align:right; }
+.footer-pay strong { display:block; font-size:15px; color:var(--accent); margin-top:4px; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.08); padding:18px 24px; text-align:center; }
+.footer-bottom p { font-size:12px; color:rgba(255,255,255,0.3); }
+
+/* ══ ANIMATIONS ═══════════════════════════════════ */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.anim { opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
+.anim.visible { opacity:1; transform:translateY(0); }
+
+/* ══ RESPONSIVE ═══════════════════════════════════ */
+@media (max-width:900px) {
+  .nav-links,.nav-cta{display:none;}
+  .burger{display:block;}
+  .contact-grid{grid-template-columns:1fr;}
+  .payment-layout{grid-template-columns:1fr;}
+  .how-arrow{display:none;}
+  .how-steps{flex-direction:column;}
+  .form-row{grid-template-columns:1fr;}
+  .payment-methods{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:600px) {
+  .section-pad{padding:52px 0;}
+  .hero{padding:64px 0 48px;}
+  .stats-inner{gap:24px;}
+  .stat-divider{display:none;}
+  .cat-grid{grid-template-columns:1fr;}
+  .products-grid{grid-template-columns:1fr;}
+  .payment-methods{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;}
+  .footer-pay{text-align:left;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo" onclick="showPage('accueil')">
+      <span class="logo-mark">R</span>
+      <span class="logo-text">Mr RHAFF <em>Digital Store</em></span>
+    </div>
+    <div class="nav-links">
+      <a onclick="showPage('accueil')" id="nav-accueil" class="active">Accueil</a>
+      <a onclick="showPage('catalogue')" id="nav-catalogue">Catalogue</a>
+      <a onclick="showPage('paiement')" id="nav-paiement">Paiement</a>
+      <a onclick="showPage('accueil');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)" id="nav-contact">Contact</a>
+    </div>
+    <button class="nav-cta" onclick="showPage('catalogue')">Voir les produits</button>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a onclick="showPage('accueil');closeMobile()">Accueil</a>
+    <a onclick="showPage('catalogue');closeMobile()">Catalogue</a>
+    <a onclick="showPage('paiement');closeMobile()">Paiement</a>
+    <a onclick="showPage('accueil');closeMobile();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)">Contact</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     PAGE ACCUEIL
+══════════════════════════════════════════════════ -->
+<div class="page active" id="page-accueil">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-shape s1"></div>
+      <div class="hero-shape s2"></div>
+      <div class="hero-shape s3"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">🛒 Boutique de produits numériques</div>
+      <h1 class="hero-title">Des ressources digitales<br><span>pour avancer plus vite</span></h1>
+      <p class="hero-desc">Ebooks, templates graphiques, outils et ressources digitales.<br>Livraison immédiate après paiement. Accessible partout en Afrique de l'Ouest.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('catalogue')">Parcourir le catalogue →</button>
+        <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Comment ça marche</button>
+      </div>
+      <div class="hero-payments">
+        <span>Paiement accepté :</span>
+        <div class="pay-badges">
+          <span class="pay-badge orange">🟠 Orange Money</span>
+          <span class="pay-badge moov">🔵 Moov Money</span>
+          <span class="pay-badge wave">🌊 Wave</span>
+          <span class="pay-badge card">💳 Carte bancaire</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="container stats-inner">
+      <div class="stat"><strong>50+</strong><span>Produits disponibles</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>100%</strong><span>Livraison immédiate</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>4</strong><span>Moyens de paiement</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>🇧🇫</strong><span>Burkina Faso</span></div>
+    </div>
+  </section>
+
+  <!-- CATÉGORIES -->
+  <section class="categories section-pad">
+    <div class="container">
+      <div class="section-label">Notre catalogue</div>
+      <h2 class="section-title">Ce que nous proposons</h2>
+      <div class="cat-grid">
+        <div class="cat-card" onclick="showPage('catalogue');filterCatDirect('ebook')">
+          <div class="cat-icon">📚</div>
+          <h3>Ebooks & Guides</h3>
+          <p>Entrepreneuriat, développement personnel, informatique, marketing digital.</p>
+          <span class="cat-link">Voir les ebooks →</span>
+        </div>
+        <div class="cat-card featured" onclick="showPage('catalogue');filterCatDirect('template')">
+          <div class="cat-badge">Populaire</div>
+          <div class="cat-icon">🎨</div>
+          <h3>Templates & Designs</h3>
+          <p>Flyers, logos, présentations PowerPoint, cartes de visite prêts à l'emploi.</p>
+          <span class="cat-link">Voir les templates →</span>
+        </div>
+        <div class="cat-card" onclick="showPage('catalogue');filterCatDirect('outil')">
+          <div class="cat-icon">🛠️</div>
+          <h3>Outils & Scripts</h3>
+          <p>Applications, scripts et outils numériques pour professionnels.</p>
+          <span class="cat-link">Voir les outils →</span>
+        </div>
+        <div class="cat-card" onclick="showPage('catalogue');filterCatDirect('formation')">
+          <div class="cat-icon">🎓</div>
+          <h3>Formations</h3>
+          <p>Ressources éducatives et modules de formation téléchargeables.</p>
+          <span class="cat-link">Voir les formations →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how section-pad" id="how">
+    <div class="container">
+      <div class="section-label">Simple & rapide</div>
+      <h2 class="section-title">Comment ça marche</h2>
+      <div class="how-steps">
+        <div class="how-step"><div class="how-num">01</div><div class="how-icon">🔍</div><h3>Choisissez</h3><p>Parcourez notre catalogue et sélectionnez le produit numérique qui vous convient.</p></div>
+        <div class="how-arrow">→</div>
+        <div class="how-step"><div class="how-num">02</div><div class="how-icon">💳</div><h3>Payez</h3><p>Réglez en toute sécurité via Orange Money, Moov Money, Wave ou carte bancaire.</p></div>
+        <div class="how-arrow">→</div>
+        <div class="how-step"><div class="how-num">03</div><div class="how-icon">⬇️</div><h3>Téléchargez</h3><p>Recevez immédiatement votre produit numérique. Accès instantané, sans délai.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUITS EN VEDETTE -->
+  <section class="featured-sec section-pad">
+    <div class="container">
+      <div class="section-label">Sélection</div>
+      <h2 class="section-title">Produits en vedette</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img ebook-bg"><span>📚</span></div>
+          <div class="product-body">
+            <span class="product-cat">Ebook</span>
+            <h3>Guide Entrepreneuriat Afrique</h3>
+            <p>Créer et développer son activité en Afrique de l'Ouest. 120 pages.</p>
+            <div class="product-footer"><span class="product-price">2 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Guide Entrepreneuriat Afrique','2500')">Acheter</button></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img template-bg"><span>🎨</span></div>
+          <div class="product-body">
+            <span class="product-cat">Template</span>
+            <h3>Pack Flyers Business 2025</h3>
+            <p>20 templates flyers professionnels modifiables (Canva + PSD).</p>
+            <div class="product-footer"><span class="product-price">3 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Pack Flyers Business 2025','3500')">Acheter</button></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img outil-bg"><span>🛠️</span></div>
+          <div class="product-body">
+            <span class="product-cat">Outil</span>
+            <h3>Kit Marketing Digital</h3>
+            <p>Scripts, modèles et checklist pour votre stratégie en ligne.</p>
+            <div class="product-footer"><span class="product-price">5 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Kit Marketing Digital Complet','5000')">Acheter</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="centered" style="margin-top:40px;"><button class="btn-primary" onclick="showPage('catalogue')">Voir tout le catalogue →</button></div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust section-pad">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item"><div class="trust-icon">🔒</div><h4>Paiement sécurisé</h4><p>Toutes les transactions sont sécurisées via MoneyFusion, agrégateur de paiement certifié.</p></div>
+        <div class="trust-item"><div class="trust-icon">⚡</div><h4>Livraison instantanée</h4><p>Recevez votre produit immédiatement après confirmation du paiement.</p></div>
+        <div class="trust-item"><div class="trust-icon">📱</div><h4>Mobile Money</h4><p>Payez directement depuis votre téléphone avec Orange Money, Moov ou Wave.</p></div>
+        <div class="trust-item"><div class="trust-icon">🤝</div><h4>Support disponible</h4><p>Notre équipe répond à vos questions sous 24h ouvrables.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section section-pad" id="contact">
+    <div class="container">
+      <div class="section-label">Nous joindre</div>
+      <h2 class="section-title">Contact & Support</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Une question sur un produit ? Un problème après achat ? Notre équipe est là pour vous aider.</p>
+          <div class="contact-items">
+            <div class="contact-item"><span class="contact-icon">📧</span><div><strong>Email</strong><span>support@rhaffservice.shop</span></div></div>
+            <div class="contact-item"><span class="contact-icon">📍</span><div><strong>Localisation</strong><span>Ouagadougou, Burkina Faso</span></div></div>
+            <div class="contact-item"><span class="contact-icon">⏰</span><div><strong>Disponibilité</strong><span>Lun–Sam · 8h00–20h00</span></div></div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="submitContact(event)">
+          <input type="text" placeholder="Votre nom" required>
+          <input type="email" placeholder="Votre email" required>
+          <textarea placeholder="Votre message" rows="4" required></textarea>
+          <button type="submit" class="btn-primary" style="width:100%">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-mark small">R</span><span class="footer-name">Mr RHAFF Digital Store</span><p>Boutique de produits numériques · Burkina Faso</p></div>
+      <div class="footer-links">
+        <a onclick="showPage('accueil')">Accueil</a>
+        <a onclick="showPage('catalogue')">Catalogue</a>
+        <a onclick="showPage('paiement')">Paiement</a>
+        <a onclick="showPage('accueil');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)">Contact</a>
+      </div>
+      <div class="footer-pay"><span>Paiements sécurisés via</span><strong>MoneyFusion</strong></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Mr RHAFF Digital Store · Tous droits réservés · Ouagadougou, Burkina Faso</p></div>
+  </footer>
+
+</div><!-- /page-accueil -->
+
+
+<!-- ══════════════════════════════════════════════════
+     PAGE CATALOGUE
+══════════════════════════════════════════════════ -->
+<div class="page" id="page-catalogue">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Tous nos produits</div>
+      <h1 class="page-title">Catalogue <span>Digital</span></h1>
+      <p>Des ressources numériques de qualité, livrées instantanément après paiement.</p>
+    </div>
+  </section>
+
+  <section class="filters-bar">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterCat('all',this)">Tous</button>
+        <button class="filter-btn" onclick="filterCat('ebook',this)">📚 Ebooks</button>
+        <button class="filter-btn" onclick="filterCat('template',this)">🎨 Templates</button>
+        <button class="filter-btn" onclick="filterCat('outil',this)">🛠️ Outils</button>
+        <button class="filter-btn" onclick="filterCat('formation',this)">🎓 Formations</button>
+      </div>
+      <div class="results-count" id="resultsCount">16 produits</div>
+    </div>
+  </section>
+
+  <section class="catalogue-section section-pad">
+    <div class="container">
+      <div class="products-grid large" id="catalogueGrid">
+
+        <!-- EBOOKS -->
+        <div class="product-card" data-cat="ebook"><div class="product-img ebook-bg"><span>📚</span></div><div class="product-body"><span class="product-cat">Ebook</span><h3>Guide Entrepreneuriat Afrique</h3><p>Créer et développer son activité en Afrique de l'Ouest. 120 pages pratiques.</p><ul class="product-features"><li>✓ Format PDF haute qualité</li><li>✓ 120 pages</li><li>✓ Téléchargement immédiat</li></ul><div class="product-footer"><span class="product-price">2 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Guide Entrepreneuriat Afrique','2500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="ebook"><div class="product-img ebook-bg"><span>💡</span></div><div class="product-body"><span class="product-cat">Ebook</span><h3>Marketing Digital pour Débutants</h3><p>Maîtrisez les réseaux sociaux et la publicité en ligne en Afrique.</p><ul class="product-features"><li>✓ Format PDF</li><li>✓ 85 pages illustrées</li><li>✓ Exemples concrets</li></ul><div class="product-footer"><span class="product-price">2 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Marketing Digital pour Débutants','2000')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="ebook"><div class="product-img ebook-bg"><span>💰</span></div><div class="product-body"><span class="product-cat">Ebook</span><h3>Gestion Financière Personnelle</h3><p>Budgétisation, épargne et gestion du quotidien en contexte africain.</p><ul class="product-features"><li>✓ Format PDF</li><li>✓ 60 pages</li><li>✓ Tableaux inclus</li></ul><div class="product-footer"><span class="product-price">1 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Gestion Financière Personnelle','1500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="ebook"><div class="product-img ebook-bg"><span>🖥️</span></div><div class="product-body"><span class="product-cat">Ebook</span><h3>Introduction à la Programmation</h3><p>Apprenez les bases du développement web en partant de zéro.</p><ul class="product-features"><li>✓ Format PDF</li><li>✓ 95 pages</li><li>✓ Exercices pratiques</li></ul><div class="product-footer"><span class="product-price">3 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Introduction à la Programmation','3000')">Acheter</button></div></div></div>
+
+        <!-- TEMPLATES -->
+        <div class="product-card" data-cat="template"><div class="product-img template-bg"><span>🎨</span></div><div class="product-body"><div class="product-badge">⭐ Populaire</div><span class="product-cat">Template</span><h3>Pack Flyers Business 2025</h3><p>20 templates flyers professionnels modifiables (Canva + PSD inclus).</p><ul class="product-features"><li>✓ 20 designs uniques</li><li>✓ Format Canva + PSD</li><li>✓ Modifiable facilement</li></ul><div class="product-footer"><span class="product-price">3 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Pack Flyers Business 2025','3500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="template"><div class="product-img template-bg"><span>📊</span></div><div class="product-body"><span class="product-cat">Template</span><h3>Pack Présentations PowerPoint</h3><p>10 thèmes PowerPoint professionnels pour vos présentations business.</p><ul class="product-features"><li>✓ 10 thèmes complets</li><li>✓ Format PPTX</li><li>✓ 100% modifiable</li></ul><div class="product-footer"><span class="product-price">4 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Pack Présentations PowerPoint','4000')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="template"><div class="product-img template-bg"><span>💼</span></div><div class="product-body"><span class="product-cat">Template</span><h3>Kit Identité Visuelle Complète</h3><p>Logo, carte de visite, papier en-tête — tout pour votre image de marque.</p><ul class="product-features"><li>✓ Logo vectoriel</li><li>✓ Carte de visite</li><li>✓ En-tête professionnel</li></ul><div class="product-footer"><span class="product-price">6 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Kit Identité Visuelle Complète','6000')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="template"><div class="product-img template-bg"><span>📱</span></div><div class="product-body"><span class="product-cat">Template</span><h3>Pack Posts Réseaux Sociaux</h3><p>30 templates Instagram, Facebook et WhatsApp pour votre communication.</p><ul class="product-features"><li>✓ 30 designs</li><li>✓ Format Canva</li><li>✓ Tous formats inclus</li></ul><div class="product-footer"><span class="product-price">2 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Pack Posts Réseaux Sociaux','2500')">Acheter</button></div></div></div>
+
+        <!-- OUTILS -->
+        <div class="product-card" data-cat="outil"><div class="product-img outil-bg"><span>🛠️</span></div><div class="product-body"><span class="product-cat">Outil</span><h3>Kit Marketing Digital Complet</h3><p>Scripts, modèles et checklists pour votre stratégie de communication en ligne.</p><ul class="product-features"><li>✓ 15 outils inclus</li><li>✓ Prêt à l'emploi</li><li>✓ Format Excel + PDF</li></ul><div class="product-footer"><span class="product-price">5 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Kit Marketing Digital Complet','5000')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="outil"><div class="product-img outil-bg"><span>📋</span></div><div class="product-body"><span class="product-cat">Outil</span><h3>Modèles Contrats & Documents</h3><p>Contrats commerciaux, devis, factures — tout pour gérer votre activité.</p><ul class="product-features"><li>✓ 20 modèles Word</li><li>✓ Conformes aux normes</li><li>✓ Modifiables</li></ul><div class="product-footer"><span class="product-price">3 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Modèles Contrats et Documents','3500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="outil"><div class="product-img outil-bg"><span>📈</span></div><div class="product-body"><span class="product-cat">Outil</span><h3>Tableaux de Bord Excel Business</h3><p>Suivi des ventes, dépenses et statistiques de votre activité en temps réel.</p><ul class="product-features"><li>✓ 5 dashboards Excel</li><li>✓ Formules incluses</li><li>✓ Instructions PDF</li></ul><div class="product-footer"><span class="product-price">4 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Tableaux de Bord Excel Business','4500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="outil"><div class="product-img outil-bg"><span>🔧</span></div><div class="product-body"><span class="product-cat">Outil</span><h3>Pack Outils Productivité</h3><p>Applications et extensions pour booster votre productivité quotidienne.</p><ul class="product-features"><li>✓ 10 outils sélectionnés</li><li>✓ Guide d'installation</li><li>✓ Tutoriels vidéo</li></ul><div class="product-footer"><span class="product-price">2 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Pack Outils Productivité','2000')">Acheter</button></div></div></div>
+
+        <!-- FORMATIONS -->
+        <div class="product-card" data-cat="formation"><div class="product-img formation-bg"><span>🎓</span></div><div class="product-body"><span class="product-cat">Formation</span><h3>Créer sa Boutique en Ligne</h3><p>Module complet pour lancer votre e-commerce en Afrique de l'Ouest.</p><ul class="product-features"><li>✓ 8 modules PDF</li><li>✓ Exemples réels</li><li>✓ Ressources bonus</li></ul><div class="product-footer"><span class="product-price">7 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Créer sa Boutique en Ligne','7500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="formation"><div class="product-img formation-bg"><span>📸</span></div><div class="product-body"><span class="product-cat">Formation</span><h3>Maîtriser Canva Pro</h3><p>Créez des visuels professionnels avec Canva, même sans expérience en design.</p><ul class="product-features"><li>✓ Guide complet PDF</li><li>✓ Exercices pratiques</li><li>✓ Templates offerts</li></ul><div class="product-footer"><span class="product-price">3 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Maîtriser Canva Pro','3000')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="formation"><div class="product-img formation-bg"><span>🌐</span></div><div class="product-body"><span class="product-cat">Formation</span><h3>Freelance & Télétravailler</h3><p>Trouver des clients, fixer ses tarifs et gérer son activité freelance.</p><ul class="product-features"><li>✓ 6 modules complets</li><li>✓ Modèles de propositions</li><li>✓ Liste de plateformes</li></ul><div class="product-footer"><span class="product-price">5 500 XOF</span><button class="btn-buy" onclick="goToPaiement('Freelance et Télétravailler','5500')">Acheter</button></div></div></div>
+
+        <div class="product-card" data-cat="formation"><div class="product-img formation-bg"><span>📣</span></div><div class="product-body"><div class="product-badge">🔥 Nouveau</div><span class="product-cat">Formation</span><h3>Publicité Facebook & Instagram</h3><p>Lancer et gérer des campagnes publicitaires rentables sur Meta.</p><ul class="product-features"><li>✓ Guide PDF + fiches</li><li>✓ Templates de publicités</li><li>✓ Checklist lancement</li></ul><div class="product-footer"><span class="product-price">6 000 XOF</span><button class="btn-buy" onclick="goToPaiement('Publicité Facebook et Instagram','6000')">Acheter</button></div></div></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-mark small">R</span><span class="footer-name">Mr RHAFF Digital Store</span><p>Boutique de produits numériques · Burkina Faso</p></div>
+      <div class="footer-links">
+        <a onclick="showPage('accueil')">Accueil</a>
+        <a onclick="showPage('catalogue')">Catalogue</a>
+        <a onclick="showPage('paiement')">Paiement</a>
+        <a onclick="showPage('accueil');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)">Contact</a>
+      </div>
+      <div class="footer-pay"><span>Paiements sécurisés via</span><strong>MoneyFusion</strong></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Mr RHAFF Digital Store · Tous droits réservés · Ouagadougou, Burkina Faso</p></div>
+  </footer>
+
+</div><!-- /page-catalogue -->
+
+
+<!-- ══════════════════════════════════════════════════
+     PAGE PAIEMENT
+══════════════════════════════════════════════════ -->
+<div class="page" id="page-paiement">
+
+  <section class="page-hero small">
+    <div class="container">
+      <div class="section-label">🔒 Paiement sécurisé</div>
+      <h1 class="page-title">Finaliser <span>votre commande</span></h1>
+      <p>Paiement sécurisé via MoneyFusion · Livraison immédiate</p>
+    </div>
+  </section>
+
+  <section class="payment-section section-pad">
+    <div class="container">
+      <div class="payment-layout">
+
+        <!-- FORMULAIRE -->
+        <div class="payment-form-box">
+          <h2 class="form-title">Informations de commande</h2>
+          <form id="paymentForm" onsubmit="submitOrder(event)">
+
+            <div class="form-group">
+              <label>Produit sélectionné</label>
+              <select id="produitSelect" name="produit" required onchange="updatePrice()">
+                <option value="">— Choisissez un produit —</option>
+                <optgroup label="📚 Ebooks & Guides">
+                  <option value="Guide Entrepreneuriat Afrique|2500">Guide Entrepreneuriat Afrique — 2 500 XOF</option>
+                  <option value="Marketing Digital pour Débutants|2000">Marketing Digital pour Débutants — 2 000 XOF</option>
+                  <option value="Gestion Financière Personnelle|1500">Gestion Financière Personnelle — 1 500 XOF</option>
+                  <option value="Introduction à la Programmation|3000">Introduction à la Programmation — 3 000 XOF</option>
+                </optgroup>
+                <optgroup label="🎨 Templates & Designs">
+                  <option value="Pack Flyers Business 2025|3500">Pack Flyers Business 2025 — 3 500 XOF</option>
+                  <option value="Pack Présentations PowerPoint|4000">Pack Présentations PowerPoint — 4 000 XOF</option>
+                  <option value="Kit Identité Visuelle Complète|6000">Kit Identité Visuelle Complète — 6 000 XOF</option>
+                  <option value="Pack Posts Réseaux Sociaux|2500">Pack Posts Réseaux Sociaux — 2 500 XOF</option>
+                </optgroup>
+                <optgroup label="🛠️ Outils & Scripts">
+                  <option value="Kit Marketing Digital Complet|5000">Kit Marketing Digital Complet — 5 000 XOF</option>
+                  <option value="Modèles Contrats et Documents|3500">Modèles Contrats & Documents — 3 500 XOF</option>
+                  <option value="Tableaux de Bord Excel Business|4500">Tableaux de Bord Excel Business — 4 500 XOF</option>
+                  <option value="Pack Outils Productivité|2000">Pack Outils Productivité — 2 000 XOF</option>
+                </optgroup>
+                <optgroup label="🎓 Formations">
+                  <option value="Créer sa Boutique en Ligne|7500">Créer sa Boutique en Ligne — 7 500 XOF</option>
+                  <option value="Maîtriser Canva Pro|3000">Maîtriser Canva Pro — 3 000 XOF</option>
+                  <option value="Freelance et Télétravailler|5500">Freelance & Télétravailler — 5 500 XOF</option>
+                  <option value="Publicité Facebook et Instagram|6000">Publicité Facebook & Instagram — 6 000 XOF</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group"><label>Prénom <span class="req">*</span></label><input type="text" name="prenom" placeholder="Votre prénom" required></div>
+              <div class="form-group"><label>Nom <span class="req">*</span></label><input type="text" name="nom" placeholder="Votre nom" required></div>
+            </div>
+
+            <div class="form-group">
+              <label>Adresse email <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="pour recevoir votre produit" required>
+              <div class="form-hint">📧 Votre produit numérique sera envoyé à cette adresse</div>
+            </div>
+
+            <div class="form-group">
+              <label>Numéro de téléphone <span class="req">*</span></label>
+              <input type="tel" name="telephone" placeholder="+226 XX XX XX XX" required>
+            </div>
+
+            <div class="form-group">
+              <label>Méthode de paiement <span class="req">*</span></label>
+              <div class="payment-methods">
+                <label class="method-option"><input type="radio" name="methode" value="orange_money" required><div class="method-card"><span class="method-icon">🟠</span><span class="method-name">Orange Money</span></div></label>
+                <label class="method-option"><input type="radio" name="methode" value="moov_money"><div class="method-card"><span class="method-icon">🔵</span><span class="method-name">Moov Money</span></div></label>
+                <label class="method-option"><input type="radio" name="methode" value="wave"><div class="method-card"><span class="method-icon">🌊</span><span class="method-name">Wave</span></div></label>
+                <label class="method-option"><input type="radio" name="methode" value="carte_bancaire"><div class="method-card"><span class="method-icon">💳</span><span class="method-name">Carte bancaire</span></div></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Message (optionnel)</label>
+              <textarea name="message" placeholder="Instructions particulières ou questions..." rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn-pay" id="payBtn"><span id="payBtnText">🔒 Procéder au paiement sécurisé</span></button>
+            <p class="pay-note">En cliquant, vous serez redirigé vers MoneyFusion pour finaliser le paiement en toute sécurité.</p>
+          </form>
+        </div>
+
+        <!-- RÉCAPITULATIF -->
+        <div class="order-summary">
+          <div class="summary-box">
+            <h3>Récapitulatif</h3>
+            <div class="summary-product">
+              <div class="summary-icon">🛒</div>
+              <div><div class="summary-name" id="summaryName">Sélectionnez un produit</div><div class="summary-type">Produit numérique — téléchargement immédiat</div></div>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-line"><span>Sous-total</span><span id="summarySubtotal">—</span></div>
+            <div class="summary-line"><span>Frais de livraison</span><span class="free">Gratuit</span></div>
+            <div class="summary-divider"></div>
+            <div class="summary-line total"><span>Total</span><span id="summaryTotal">—</span></div>
+            <div class="summary-delivery">⚡ Livraison <strong>immédiate</strong> après paiement confirmé</div>
+          </div>
+          <div class="trust-box">
+            <div class="trust-row"><span>🔒</span><span>Paiement 100% sécurisé via MoneyFusion</span></div>
+            <div class="trust-row"><span>📧</span><span>Livraison par email dès confirmation</span></div>
+            <div class="trust-row"><span>🤝</span><span>Support disponible sous 24h</span></div>
+            <div class="trust-row"><span>🇧🇫</span><span>Service basé au Burkina Faso</span></div>
+          </div>
+          <div class="pay-logos">
+            <div class="pay-logos-title">Moyens de paiement acceptés</div>
+            <div class="pay-logos-row">
+              <span class="pay-badge orange">🟠 Orange Money</span>
+              <span class="pay-badge moov">🔵 Moov Money</span>
+              <span class="pay-badge wave">🌊 Wave</span>
+              <span class="pay-badge card">💳 Carte</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-mark small">R</span><span class="footer-name">Mr RHAFF Digital Store</span><p>Boutique de produits numériques · Burkina Faso</p></div>
+      <div class="footer-links">
+        <a onclick="showPage('accueil')">Accueil</a>
+        <a onclick="showPage('catalogue')">Catalogue</a>
+        <a onclick="showPage('paiement')">Paiement</a>
+        <a onclick="showPage('accueil');setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),300)">Contact</a>
+      </div>
+      <div class="footer-pay"><span>Paiements sécurisés via</span><strong>MoneyFusion</strong></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Mr RHAFF Digital Store · Tous droits réservés · Ouagadougou, Burkina Faso</p></div>
+  </footer>
+
+</div><!-- /page-paiement -->
+
+<!-- MODAL SUCCÈS -->
+<div class="modal-overlay" id="successModal" style="display:none">
+  <div class="modal-box">
+    <div class="modal-icon">✅</div>
+    <h3>Commande transmise !</h3>
+    <p>Votre commande a été reçue. Vous allez être redirigé vers MoneyFusion pour finaliser le paiement.</p>
+    <p style="margin-top:12px;font-size:13px;color:#888">Après paiement, votre produit sera envoyé par email dans les minutes qui suivent.</p>
+    <button class="btn-primary" style="margin-top:24px;width:100%" onclick="closeModal()">Compris !</button>
+  </div>
+</div>
+
+<script>
+/* ══ NAVIGATION SPA ══ */
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + name);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  // Re-init animations
+  setTimeout(initAnimations, 100);
+}
+
+/* ══ MENU MOBILE ══ */
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+/* ══ CATALOGUE FILTER ══ */
+function filterCat(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('#catalogueGrid .product-card');
+  let count = 0;
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) { card.style.display = ''; count++; }
+    else { card.style.display = 'none'; }
+  });
+  document.getElementById('resultsCount').textContent = count + ' produit' + (count > 1 ? 's' : '');
+}
+
+function filterCatDirect(cat) {
+  setTimeout(() => {
+    const btn = document.querySelector(`.filter-btn[onclick*="'${cat}'"]`);
+    if (btn) filterCat(cat, btn);
+  }, 50);
+}
+
+/* ══ PAIEMENT : PASSER UN PRODUIT ══ */
+function goToPaiement(nom, prix) {
+  showPage('paiement');
+  setTimeout(() => {
+    const sel = document.getElementById('produitSelect');
+    const valeur = nom + '|' + prix;
+    for (let opt of sel.options) {
+      if (opt.value === valeur) { sel.value = valeur; updatePrice(); break; }
+    }
+  }, 100);
+}
+
+/* ══ PAIEMENT : MISE À JOUR PRIX ══ */
+function updatePrice() {
+  const sel = document.getElementById('produitSelect');
+  const val = sel.value;
+  if (!val) {
+    document.getElementById('summaryName').textContent = 'Sélectionnez un produit';
+    document.getElementById('summarySubtotal').textContent = '—';
+    document.getElementById('summaryTotal').textContent = '—';
+    document.getElementById('payBtnText').textContent = '🔒 Procéder au paiement sécurisé';
+    return;
+  }
+  const [name, price] = val.split('|');
+  const formatted = parseInt(price).toLocaleString('fr-FR') + ' XOF';
+  document.getElementById('summaryName').textContent = name;
+  document.getElementById('summarySubtotal').textContent = formatted;
+  document.getElementById('summaryTotal').textContent = formatted;
+  document.getElementById('payBtnText').textContent = '🔒 Payer ' + formatted + ' — Sécurisé';
+}
+
+/* ══ PAIEMENT : SOUMETTRE ══ */
+function submitOrder(e) {
+  e.preventDefault();
+  const btn = document.getElementById('payBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳ Traitement en cours...</span>';
+  setTimeout(() => {
+    document.getElementById('successModal').style.display = 'flex';
+    btn.disabled = false;
+    btn.innerHTML = '<span id="payBtnText">🔒 Procéder au paiement sécurisé</span>';
+  }, 1800);
+}
+
+function closeModal() { document.getElementById('successModal').style.display = 'none'; }
+
+/* ══ CONTACT ══ */
+function submitContact(e) {
+  e.preventDefault();
+  alert('✅ Message envoyé ! Nous vous répondrons sous 24h.');
+  e.target.reset();
+}
+
+/* ══ ANIMATIONS SCROLL ══ */
+function initAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.page.active .cat-card, .page.active .product-card, .page.active .trust-item, .page.active .how-step').forEach(el => {
+    el.classList.add('anim');
+    observer.observe(el);
+  });
+}
+
+// Init au chargement
+initAnimations();
+</script>
+</body>
+</html>
