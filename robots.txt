@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://barkatunnel.vercel.app/sitemap.xml
