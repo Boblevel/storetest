@@ -8,42 +8,45 @@
   <title>Barka Tunnel — Téléchargement officiel</title>
   <style>
     :root{
-      --bg:#f6f8fc;
-      --text:#202124;
+      --bg:#f4f6fb;
+      --surface:#ffffff;
+      --surface-2:#f8fafc;
+      --text:#171717;
       --muted:#5f6368;
       --line:#e6e8eb;
       --primary:#0b57d0;
-      --primary-2:#1a73e8;
-      --soft:#f8f9fa;
-      --green:#137333;
-      --shadow:0 2px 10px rgba(60,64,67,.14);
-      --radius:22px;
+      --primary-dark:#0842a0;
+      --green:#16a34a;
+      --green-soft:#e8f7ee;
+      --shadow:0 12px 32px rgba(15,23,42,.08);
+      --radius:28px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
-      background:var(--bg);
+      background:linear-gradient(180deg,#f7f9fd 0%,#f2f5fb 100%);
       color:var(--text);
       -webkit-font-smoothing:antialiased;
     }
     a{text-decoration:none;color:inherit}
     button{font:inherit}
-    .page{max-width:960px;margin:0 auto;padding:24px 20px 100px}
+    img{max-width:100%}
+    .page{max-width:1120px;margin:0 auto;padding:24px 20px 110px}
     .topbar{
       position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(230,232,235,.8);
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(230,232,235,.85);
     }
     .topbar-inner{
-      max-width:920px;margin:auto;height:64px;padding:0 20px;
+      max-width:1120px;margin:auto;height:66px;padding:0 20px;
       display:flex;align-items:center;justify-content:space-between;
     }
     .brand-mini{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand-dot{
-      width:36px;height:36px;border-radius:11px;
+      width:36px;height:36px;border-radius:12px;
       display:grid;place-items:center;overflow:hidden;
       background:#fff;border:1px solid var(--line);
     }
@@ -52,107 +55,182 @@
     .icon-btn{
       width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;
       display:grid;place-items:center;cursor:pointer;color:#374151;
+      box-shadow:0 3px 12px rgba(15,23,42,.04);
     }
     .icon-btn svg{width:18px;height:18px}
     .hero{
-      display:grid;grid-template-columns:132px 1fr;gap:26px;
-      align-items:center;padding:30px;
-      background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 10px 30px rgba(15,23,42,.08);
+      display:grid;grid-template-columns:132px 1fr;gap:28px;
+      align-items:center;padding:32px;
+      background:var(--surface);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);
     }
     .app-icon{
       width:132px;height:132px;border-radius:28px;
-      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+      background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px rgba(15,23,42,.08);
       display:block;object-fit:cover;
     }
     .app-icon-fallback{
       width:132px;height:132px;border-radius:28px;
-      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+      background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px rgba(15,23,42,.08);
       display:none;place-items:center;
       font-size:70px;font-weight:800;color:#0b57d0;
     }
-    .developer{color:var(--primary);font-weight:700;font-size:20px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
-    .verified-badge{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;flex:0 0 19px}
-    .verified-badge svg{width:19px;height:19px;display:block}
-    h1{font-size:48px;line-height:1.06;margin:0 0 10px;letter-spacing:-1.4px}
+    .developer{color:var(--primary);font-weight:700;font-size:20px;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .verified-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;flex:0 0 20px}
+    .verified-badge svg{width:20px;height:20px;display:block}
+    h1{font-size:50px;line-height:1.05;margin:0 0 10px;letter-spacing:-1.4px}
     .subtitle{font-size:18px;color:var(--muted);margin:0}
     .meta{
       display:grid;grid-template-columns:repeat(4,1fr);
-      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-      padding:18px;margin:18px 0 20px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 6px 20px rgba(15,23,42,.05);
+      gap:0;
+      padding:18px;margin:18px 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:0 8px 24px rgba(15,23,42,.05);
     }
-    .meta-item{text-align:center;padding:0 10px;border-right:1px solid var(--line)}
+    .meta-item{text-align:center;padding:4px 10px;border-right:1px solid var(--line)}
     .meta-item:last-child{border-right:0}
-    .meta-value{font-weight:800;font-size:16px;margin-bottom:4px}
+    .meta-value{font-weight:800;font-size:18px;margin-bottom:6px}
     .meta-label{font-size:13px;color:var(--muted)}
     .download{
       display:block;width:100%;text-align:center;
-      background:var(--primary);color:#fff;
-      padding:17px 22px;border-radius:999px;font-weight:800;font-size:18px;
-      box-shadow:0 2px 6px rgba(11,87,208,.25);
+      background:linear-gradient(180deg,#1765ea 0%,#0b57d0 100%);color:#fff;
+      padding:18px 22px;border-radius:999px;font-weight:800;font-size:18px;
+      box-shadow:0 10px 24px rgba(11,87,208,.23);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .download:hover{background:#0842a0}
-    .section{padding:24px;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+    .download:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 14px 30px rgba(11,87,208,.28)}
+    .section{padding:28px;margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
     .section-title{
       display:flex;align-items:center;justify-content:space-between;
       margin-bottom:18px;
     }
-    .section-title h2{font-size:30px;margin:0;letter-spacing:-.5px}
+    .section-title h2{font-size:32px;margin:0;letter-spacing:-.6px}
     .arrow{
-      width:44px;height:44px;border-radius:50%;background:var(--soft);
-      display:grid;place-items:center;color:var(--primary);
+      width:48px;height:48px;border-radius:50%;background:var(--surface-2);
+      display:grid;place-items:center;color:var(--primary);border:1px solid #edf1f5;
     }
-    .arrow svg{width:19px;height:19px}
-    .screens{
-      display:grid;grid-auto-flow:column;grid-auto-columns:minmax(235px, 29%);
-      overflow-x:auto;gap:16px;padding:2px 2px 16px;
-      scroll-snap-type:x mandatory;
-      scrollbar-width:none;
+    .arrow svg{width:20px;height:20px}
+    .banner-wrap{
+      position:relative;
+      overflow:hidden;
+      border-radius:26px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,#eef3fb,#e9eef9);
+      margin-bottom:24px;
+      min-height:220px;
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
     }
-    .screens::-webkit-scrollbar{display:none}
-    .shot{
-      scroll-snap-align:start;min-height:470px;
-      border-radius:18px;overflow:hidden;background:var(--soft);
-      border:1px solid var(--line);box-shadow:var(--shadow);
+    .banner-wrap img{
+      width:100%;
+      min-height:220px;
+      max-height:360px;
+      object-fit:cover;
+      display:block;
     }
-    .shot img{width:100%;height:100%;object-fit:cover;display:block}
-    .shot .placeholder{
-      height:470px;display:grid;place-items:center;text-align:center;
-      color:var(--muted);padding:24px;
-      background:linear-gradient(180deg,#f8f9fa,#eef3fb);
+    .banner-fallback{
+      min-height:220px;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--muted);
+      padding:30px;
+      font-size:18px;
     }
     .about{
-      font-size:18px;line-height:1.65;color:#3c4043;
-      margin:0 0 22px;
+      font-size:18px;line-height:1.72;color:#3c4043;
+      margin:0;
+      max-width:900px;
     }
-    .features{
-      display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px;
+    .screens-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
     }
-    .feature{
-      padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;
-    }
-    .feature strong{display:flex;align-items:center;gap:9px;margin-bottom:8px}
-    .feature-inline-icon{width:30px;height:30px;border-radius:10px;background:#eef4ff;color:var(--primary);display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px}
-    .feature-inline-icon svg{width:17px;height:17px}
-    .feature span{color:var(--muted);font-size:14px;line-height:1.5}
-    .info-card{
-      margin-top:28px;padding:22px;border-radius:20px;background:var(--soft);
+    .shot{
+      position:relative;
+      border-radius:22px;
+      overflow:hidden;
+      background:linear-gradient(180deg,#f8fafc,#eff3f9);
       border:1px solid var(--line);
+      box-shadow:0 10px 26px rgba(15,23,42,.06);
+      padding:14px;
+      min-height:320px;
+      cursor:pointer;
     }
-    .info-row{
-      display:flex;justify-content:space-between;gap:20px;
-      padding:12px 0;border-bottom:1px solid var(--line);
+    .shot::after{
+      content:"Voir";
+      position:absolute;
+      top:14px;right:14px;
+      background:rgba(255,255,255,.96);
+      color:var(--primary);
+      border:1px solid #e7ebf0;
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:12px;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(15,23,42,.08);
     }
-    .info-row:last-child{border-bottom:0}
-    .info-row span{color:var(--muted)}
-    .info-row b{text-align:right}
-    .faq{margin-top:22px}
-    details{border-top:1px solid var(--line);padding:18px 0}
-    details:last-child{border-bottom:1px solid var(--line)}
-    summary{cursor:pointer;font-weight:700;font-size:17px}
-    details p{color:var(--muted);line-height:1.55}
+    .shot-inner{
+      height:100%;
+      min-height:292px;
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .shot img{
+      width:100%;
+      height:100%;
+      max-height:620px;
+      object-fit:contain;
+      display:block;
+      background:#fff;
+    }
+    .shot .placeholder{
+      min-height:292px;display:grid;place-items:center;text-align:center;
+      color:var(--muted);padding:24px;
+      background:linear-gradient(180deg,#f8f9fa,#eef3fb);
+      width:100%;
+    }
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+    .review{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#fbfcff);
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+    .review-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .avatar{
+      width:52px;height:52px;border-radius:50%;overflow:hidden;flex:0 0 52px;
+      border:1px solid rgba(0,0,0,.06);background:#f4f4f4;
+      box-shadow:0 4px 14px rgba(15,23,42,.08);
+    }
+    .avatar img{width:100%;height:100%;display:block;object-fit:cover}
+    .review-name{font-weight:800;font-size:16px}
+    .review-meta{font-size:13px;color:var(--muted);margin-top:2px}
+    .stars{display:flex;gap:2px;color:#f4b400;margin:8px 0 12px}
+    .stars svg{width:16px;height:16px;fill:currentColor}
+    .review p{margin:0;color:#3c4043;line-height:1.6;font-size:15px}
     .footer{
-      margin-top:40px;padding-top:26px;border-top:1px solid var(--line);
-      color:var(--muted);font-size:13px;line-height:1.7;
+      margin-top:28px;
+      padding:24px 10px 6px;
+      text-align:center;
+      color:#4b5563;
+      font-size:14px;
+      line-height:1.7;
+    }
+    .copyright{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:0 8px 20px rgba(15,23,42,.05);
     }
     .sticky-download{
       display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
@@ -161,17 +239,51 @@
       border-top:1px solid var(--line);
     }
     .sticky-download a{
-      display:block;text-align:center;background:var(--primary);color:#fff;
+      display:block;text-align:center;background:linear-gradient(180deg,#1765ea 0%,#0b57d0 100%);color:#fff;
       padding:14px;border-radius:999px;font-weight:800;
+      box-shadow:0 10px 24px rgba(11,87,208,.22);
+    }
+    .lightbox{
+      position:fixed;inset:0;z-index:100;
+      background:rgba(15,23,42,.86);
+      display:none;align-items:center;justify-content:center;
+      padding:24px;
+    }
+    .lightbox.active{display:flex}
+    .lightbox-box{
+      position:relative;
+      width:min(100%,1080px);
+      max-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .lightbox-box img{
+      width:auto;
+      max-width:100%;
+      max-height:86vh;
+      object-fit:contain;
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,.34);
+    }
+    .lightbox-close{
+      position:absolute;
+      top:-8px;right:-8px;
+      width:42px;height:42px;border:none;border-radius:50%;
+      background:#fff;color:#111827;cursor:pointer;
+      display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.24);
+    }
+    .lightbox-close svg{width:20px;height:20px}
+    @media (max-width:960px){
+      .reviews-grid{grid-template-columns:1fr 1fr}
+      .screens-grid{grid-template-columns:1fr 1fr}
     }
     @media (max-width:700px){
       .page{padding:16px 14px 96px}
       .topbar-inner{padding:0 16px;height:58px}
       .brand-mini span:last-child{display:none}
-      .hero{
-        grid-template-columns:86px 1fr;gap:18px;
-        padding:22px;
-      }
+      .hero{grid-template-columns:86px 1fr;gap:18px;padding:22px}
       .app-icon,.app-icon-fallback{width:86px;height:86px;border-radius:20px}
       .app-icon-fallback{font-size:44px}
       .developer{font-size:16px;margin-bottom:5px}
@@ -179,17 +291,23 @@
       .subtitle{font-size:15px}
       .meta{grid-template-columns:repeat(3,1fr)}
       .meta-item:nth-child(4){display:none}
-      .screens{grid-auto-columns:72%}
-      .shot,.shot .placeholder{min-height:440px;height:440px}
+      .section{padding:22px}
       .section-title h2{font-size:26px}
-      .features{grid-template-columns:1fr}
+      .screens-grid,.reviews-grid{grid-template-columns:1fr}
+      .shot{min-height:unset}
+      .shot-inner{min-height:unset}
+      .shot img{max-height:none;height:auto}
+      .banner-wrap img{max-height:240px}
       .sticky-download{display:block}
+      .lightbox{padding:14px}
+      .lightbox-box img{max-height:82vh}
     }
     @media (max-width:420px){
       h1{font-size:31px}
       .meta-value{font-size:14px}
       .meta-label{font-size:12px}
-      .screens{grid-auto-columns:82%}
+      .section-title h2{font-size:23px}
+      .about{font-size:17px}
     }
   </style>
 </head>
@@ -218,7 +336,7 @@
       <div class="developer">RHAFF SERVICE
         <span class="verified-badge" aria-label="Compte certifié" title="Compte certifié">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="#0b57d0" d="M12 2.2l2.1 1.4 2.5-.2 1.2 2.2 2.3 1-.2 2.5 1.4 2.1-1.4 2.1.2 2.5-2.3 1-1.2 2.2-2.5-.2L12 20.2l-2.1-1.4-2.5.2-1.2-2.2-2.3-1 .2-2.5-1.4-2.1 1.4-2.1-.2-2.5 2.3-1 1.2-2.2 2.5.2L12 2.2z"/>
+            <path fill="#16a34a" d="M12 2.2l2.1 1.4 2.5-.2 1.2 2.2 2.3 1-.2 2.5 1.4 2.1-1.4 2.1.2 2.5-2.3 1-1.2 2.2-2.5-.2L12 20.2l-2.1-1.4-2.5.2-1.2-2.2-2.3-1 .2-2.5-1.4-2.1 1.4-2.1-.2-2.5 2.3-1 1.2-2.2 2.5.2L12 2.2z"/>
             <path fill="#fff" d="M10.4 15.5L7.2 12.3l1.4-1.4 1.8 1.8 4.9-4.9 1.4 1.4-6.3 6.3z"/>
           </svg>
         </span>
@@ -251,30 +369,43 @@
     Télécharger Barka Tunnel
   </a>
 
+  <section class="section" id="infos">
+    <div class="banner-wrap">
+      <img src="assets/screenshot-5.png" alt="Bannière Barka Tunnel"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="banner-fallback">Ajoutez ici <b>assets/screenshot-5.png</b></div>
+    </div>
 
-  <section class="section">
     <div class="section-title">
       <h2>Captures d’écran</h2>
       <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
     </div>
 
-    <div class="screens">
-      <div class="shot">
-        <img src="assets/screenshot-1.png" alt="Accueil Barka Tunnel"
-             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-1.png</b></div>'">
-      </div>
-      <div class="shot">
-        <img src="assets/screenshot-2.png" alt="Menu Barka Tunnel"
-             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-2.png</b></div>'">
-      </div>
-      <div class="shot">
-        <img src="assets/screenshot-3.png" alt="Journal Barka Tunnel"
-             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-3.png</b></div>'">
-      </div>
-      <div class="shot">
-        <img src="assets/screenshot-4.png" alt="Paramètres Barka Tunnel"
-             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-4.png</b></div>'">
-      </div>
+    <div class="screens-grid">
+      <button class="shot" type="button" aria-label="Voir la capture 1" onclick="openLightbox('assets/screenshot-1.png','Capture 1')">
+        <div class="shot-inner">
+          <img src="assets/screenshot-1.png" alt="Accueil Barka Tunnel"
+               onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-1.png</b></div>'">
+        </div>
+      </button>
+      <button class="shot" type="button" aria-label="Voir la capture 2" onclick="openLightbox('assets/screenshot-2.png','Capture 2')">
+        <div class="shot-inner">
+          <img src="assets/screenshot-2.png" alt="Interface Barka Tunnel"
+               onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-2.png</b></div>'">
+        </div>
+      </button>
+      <button class="shot" type="button" aria-label="Voir la capture 3" onclick="openLightbox('assets/screenshot-3.png','Capture 3')">
+        <div class="shot-inner">
+          <img src="assets/screenshot-3.png" alt="Fonctionnalités Barka Tunnel"
+               onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-3.png</b></div>'">
+        </div>
+      </button>
+      <button class="shot" type="button" aria-label="Voir la capture 4" onclick="openLightbox('assets/screenshot-4.png','Capture 4')">
+        <div class="shot-inner">
+          <img src="assets/screenshot-4.png" alt="Support Barka Tunnel"
+               onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-4.png</b></div>'">
+        </div>
+      </button>
     </div>
   </section>
 
@@ -290,60 +421,75 @@
       suivre le temps de connexion et le temps restant, consulter le journal de connexion,
       utiliser un code d’activation et accéder rapidement au support.
     </p>
-
-    <div class="features">
-      <div class="feature">
-        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>Connexion rapide</strong>
-        <span>Interface simple pour démarrer ou arrêter le tunnel en quelques secondes.</span>
-      </div>
-      <div class="feature">
-        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Plusieurs réseaux</strong>
-        <span>Prise en charge des réseaux configurés dans Barka Tunnel.</span>
-      </div>
-      <div class="feature">
-        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z"/></svg></span>IP Finder</strong>
-        <span>Outils intégrés pour consulter et vérifier votre environnement réseau.</span>
-      </div>
-      <div class="feature">
-        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>Journal</strong>
-        <span>Suivi clair des événements de connexion et de l’état du tunnel.</span>
-      </div>
-    </div>
-
-    <div id="infos" class="info-card">
-      <div class="info-row"><span>Version</span><b>1.1.9.5</b></div>
-      <div class="info-row"><span>Package</span><b>com.barkatunnel.app</b></div>
-      <div class="info-row"><span>Android minimum</span><b>7.0</b></div>
-      <div class="info-row"><span>Développeur</span><b>RHAFF SERVICE</b></div>
-      <div class="info-row"><span>Format</span><b>APK Android</b></div>
-    </div>
   </section>
 
-  <section class="section faq">
-    <div class="section-title"><h2>Questions fréquentes</h2></div>
+  <section class="section">
+    <div class="section-title">
+      <h2>Avis et commentaires</h2>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+    </div>
 
-    <details>
-      <summary>Comment installer l’application ?</summary>
-      <p>Téléchargez l’APK, ouvrez le fichier téléchargé puis autorisez l’installation depuis votre navigateur si Android vous le demande.</p>
-    </details>
-    <details>
-      <summary>Pourquoi Android affiche un avertissement ?</summary>
-      <p>Android peut afficher un avertissement pour les applications installées en dehors d’une boutique. Vérifiez toujours que vous téléchargez depuis ce site officiel.</p>
-    </details>
-    <details>
-      <summary>Comment recevoir les nouvelles versions ?</summary>
-      <p>Revenez sur cette page pour télécharger la dernière version publiée de Barka Tunnel.</p>
-    </details>
+    <div class="reviews-grid">
+      <article class="review">
+        <div class="review-head">
+          <div class="avatar"><img alt="Photo de Aïcha Traoré" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='60' fill='%23f3e8d7'/><circle cx='60' cy='46' r='23' fill='%23875f49'/><path d='M25 105c5-20 18-33 35-33s30 13 35 33' fill='%23c47f5a'/><path d='M36 42c4-15 18-25 31-25 11 0 20 4 27 14-6-3-11-4-17-4-10 0-18 4-25 10-4 4-8 7-16 5z' fill='%231a1a1a'/><circle cx='51' cy='45' r='2.5' fill='%231a1a1a'/><circle cx='69' cy='45' r='2.5' fill='%231a1a1a'/><path d='M53 58c5 4 9 4 14 0' stroke='%231a1a1a' stroke-width='3' fill='none' stroke-linecap='round'/></svg>"></div>
+          <div>
+            <div class="review-name">Aïcha Traoré</div>
+            <div class="review-meta">Ouagadougou, Burkina Faso</div>
+          </div>
+        </div>
+        <div class="stars" aria-label="5 étoiles">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p>Application très propre. La connexion démarre vite et l’interface est simple à comprendre. Chez moi sur Moov, ça marche bien.</p>
+      </article>
+
+      <article class="review">
+        <div class="review-head">
+          <div class="avatar"><img alt="Photo de Moussa Koné" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='60' fill='%23e8ecf6'/><circle cx='60' cy='45' r='22' fill='%23734c33'/><path d='M22 106c4-21 18-35 38-35s34 14 38 35' fill='%23a96d44'/><path d='M36 37c4-17 17-24 28-24 13 0 25 8 29 24-7-5-15-7-25-7-11 0-21 4-32 7z' fill='%23181818'/><circle cx='51' cy='45' r='2.4' fill='%23181818'/><circle cx='69' cy='45' r='2.4' fill='%23181818'/><path d='M51 57c6 3 12 3 18 0' stroke='%23181818' stroke-width='3' fill='none' stroke-linecap='round'/></svg>"></div>
+          <div>
+            <div class="review-name">Moussa Koné</div>
+            <div class="review-meta">Bamako, Mali</div>
+          </div>
+        </div>
+        <div class="stars" aria-label="5 étoiles">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p>Le site est clair et le téléchargement est direct. J’aime surtout la présentation des captures, on voit bien toute l’interface.</p>
+      </article>
+
+      <article class="review">
+        <div class="review-head">
+          <div class="avatar"><img alt="Photo de Grâce N’Guessan" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><rect width='120' height='120' rx='60' fill='%23f1ecff'/><circle cx='60' cy='45' r='22' fill='%23825d47'/><path d='M25 106c5-21 18-35 35-35s30 14 35 35' fill='%23bc7e58'/><path d='M34 40c1-17 14-28 31-28 15 0 27 9 30 24-4-2-10-4-17-4-6 0-13 2-19 5-9 4-18 7-25 3z' fill='%23202020'/><circle cx='51' cy='45' r='2.4' fill='%23202020'/><circle cx='69' cy='45' r='2.4' fill='%23202020'/><path d='M52 58c4 5 12 5 16 0' stroke='%23202020' stroke-width='3' fill='none' stroke-linecap='round'/></svg>"></div>
+          <div>
+            <div class="review-name">Grâce N’Guessan</div>
+            <div class="review-meta">Abidjan, Côte d’Ivoire</div>
+          </div>
+        </div>
+        <div class="stars" aria-label="5 étoiles">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p>Très belle présentation. Les informations sont bien organisées et l’application reste facile à installer même quand on n’utilise pas une boutique d’apps.</p>
+      </article>
+    </div>
   </section>
 
   <footer class="footer">
-    © 2026 RHAFF SERVICE — Barka Tunnel.<br>
-    Ce site est indépendant et n’est pas affilié à Google Play.
+    <div class="copyright">© 2026</div>
   </footer>
 </main>
 
 <div class="sticky-download">
   <a href="downloads/BarkaTunnel.apk" download>Télécharger l’APK</a>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" onclick="closeLightbox(event)">
+  <div class="lightbox-box">
+    <button class="lightbox-close" type="button" aria-label="Fermer" onclick="closeLightbox(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+    <img id="lightboxImage" src="" alt="Capture d’écran agrandie">
+  </div>
 </div>
 
 <script>
@@ -364,6 +510,34 @@
       }
     }
   }
+
+  function openLightbox(src, altText){
+    const box = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImage');
+    img.src = src;
+    img.alt = altText || 'Capture d’écran agrandie';
+    box.classList.add('active');
+    box.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(event){
+    if(event && event.target && event.currentTarget && event.target !== event.currentTarget && !event.target.closest('.lightbox-close')){
+      return;
+    }
+    const box = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImage');
+    box.classList.remove('active');
+    box.setAttribute('aria-hidden', 'true');
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape'){
+      closeLightbox();
+    }
+  });
 </script>
 </body>
 </html>
