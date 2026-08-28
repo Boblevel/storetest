@@ -2,363 +2,363 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="Politique de confidentialité officielle de l'application Barka Tunnel." />
-  <title>Politique de confidentialité - Barka Tunnel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Téléchargez Barka Tunnel pour Android depuis le site officiel." />
+  <title>Barka Tunnel — Téléchargement officiel</title>
   <style>
-    :root {
-      --bg: #f4f7fb;
-      --card: rgba(255, 255, 255, 0.94);
-      --text: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --primary: #2563eb;
-      --primary-soft: #eff6ff;
-      --accent: #0ea5e9;
-      --shadow: 0 20px 60px rgba(15, 23, 42, 0.10);
+    :root{
+      --bg:#ffffff;
+      --text:#202124;
+      --muted:#5f6368;
+      --line:#e6e8eb;
+      --primary:#0b57d0;
+      --primary-2:#1a73e8;
+      --soft:#f8f9fa;
+      --green:#137333;
+      --shadow:0 2px 10px rgba(60,64,67,.14);
+      --radius:22px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
     }
-
-    html {
-      scroll-behavior: smooth;
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .page{max-width:920px;margin:0 auto;padding:0 20px 90px}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(230,232,235,.8);
     }
-
-    body {
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 34%),
-        radial-gradient(circle at top right, rgba(14, 165, 233, 0.10), transparent 30%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.72;
+    .topbar-inner{
+      max-width:920px;margin:auto;height:64px;padding:0 20px;
+      display:flex;align-items:center;justify-content:space-between;
     }
-
-    .page {
-      width: min(94%, 980px);
-      margin: 0 auto;
-      padding: 28px 0 48px;
+    .brand-mini{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-dot{
+      width:34px;height:34px;border-radius:10px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,#0b57d0,#2382ff);
+      color:#fff;font-weight:800;font-size:20px;
     }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #0f172a 0%, #172554 56%, #1d4ed8 100%);
-      color: #fff;
-      border-radius: 24px;
-      padding: 42px 30px;
-      box-shadow: var(--shadow);
-      margin-bottom: 22px;
+    .top-actions{display:flex;gap:10px}
+    .icon-btn{
+      width:42px;height:42px;border:0;background:#fff;border-radius:50%;
+      display:grid;place-items:center;cursor:pointer;
     }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      right: -80px;
-      top: -80px;
-      background: rgba(255, 255, 255, 0.08);
+    .hero{
+      display:grid;grid-template-columns:132px 1fr;gap:26px;
+      align-items:center;padding:44px 0 28px;
     }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      font-size: 0.85rem;
-      margin-bottom: 16px;
+    .app-icon{
+      width:132px;height:132px;border-radius:28px;
+      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+      display:block;object-fit:cover;
     }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.05;
-      margin-bottom: 12px;
-      letter-spacing: -0.03em;
+    .app-icon-fallback{
+      width:132px;height:132px;border-radius:28px;
+      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+      display:none;place-items:center;
+      font-size:70px;font-weight:800;color:#0b57d0;
     }
-
-    .hero p {
-      color: rgba(255, 255, 255, 0.82);
-      max-width: 720px;
-      font-size: 1rem;
+    .developer{color:var(--primary);font-weight:700;font-size:20px;margin-bottom:8px}
+    h1{font-size:48px;line-height:1.06;margin:0 0 10px;letter-spacing:-1.4px}
+    .subtitle{font-size:18px;color:var(--muted);margin:0}
+    .meta{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      padding:18px 0;margin:8px 0 20px;
     }
-
-    .content {
-      background: var(--card);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 34px;
+    .meta-item{text-align:center;padding:0 10px;border-right:1px solid var(--line)}
+    .meta-item:last-child{border-right:0}
+    .meta-value{font-weight:800;font-size:16px;margin-bottom:4px}
+    .meta-label{font-size:13px;color:var(--muted)}
+    .download{
+      display:block;width:100%;text-align:center;
+      background:var(--primary);color:#fff;
+      padding:17px 22px;border-radius:999px;font-weight:800;font-size:18px;
+      box-shadow:0 2px 6px rgba(11,87,208,.25);
     }
-
-    .intro {
-      padding: 18px 20px;
-      background: var(--primary-soft);
-      border: 1px solid #bfdbfe;
-      border-left: 4px solid var(--primary);
-      border-radius: 14px;
-      margin-bottom: 28px;
+    .download:hover{background:#0842a0}
+    .notice{
+      display:flex;gap:12px;align-items:flex-start;
+      margin:14px 0 34px;color:var(--muted);font-size:14px;
     }
-
-    section + section {
-      margin-top: 30px;
-      padding-top: 26px;
-      border-top: 1px solid var(--line);
+    .notice b{color:var(--text)}
+    .section{padding:18px 0 8px}
+    .section-title{
+      display:flex;align-items:center;justify-content:space-between;
+      margin-bottom:18px;
     }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-      color: #0f172a;
+    .section-title h2{font-size:30px;margin:0;letter-spacing:-.5px}
+    .arrow{
+      width:44px;height:44px;border-radius:50%;background:var(--soft);
+      display:grid;place-items:center;font-size:24px;
     }
-
-    p {
-      margin-bottom: 12px;
-      color: #334155;
+    .screens{
+      display:grid;grid-auto-flow:column;grid-auto-columns:minmax(235px, 29%);
+      overflow-x:auto;gap:16px;padding:2px 2px 16px;
+      scroll-snap-type:x mandatory;
+      scrollbar-width:none;
     }
-
-    ul {
-      padding-left: 22px;
-      margin-top: 8px;
-      color: #334155;
+    .screens::-webkit-scrollbar{display:none}
+    .shot{
+      scroll-snap-align:start;min-height:470px;
+      border-radius:18px;overflow:hidden;background:var(--soft);
+      border:1px solid var(--line);box-shadow:var(--shadow);
     }
-
-    li + li {
-      margin-top: 7px;
+    .shot img{width:100%;height:100%;object-fit:cover;display:block}
+    .shot .placeholder{
+      height:470px;display:grid;place-items:center;text-align:center;
+      color:var(--muted);padding:24px;
+      background:linear-gradient(180deg,#f8f9fa,#eef3fb);
     }
-
-    .note {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      color: #475569;
+    .about{
+      font-size:18px;line-height:1.65;color:#3c4043;
+      margin:0 0 22px;
     }
-
-    .footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      padding: 24px 12px 0;
+    .features{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px;
     }
-
-    .top-button {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      width: 46px;
-      height: 46px;
-      border: 0;
-      border-radius: 50%;
-      background: #0f172a;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.24);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(8px);
-      transition: 0.2s ease;
+    .feature{
+      padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;
     }
-
-    .top-button.visible {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
+    .feature strong{display:block;margin-bottom:5px}
+    .feature span{color:var(--muted);font-size:14px;line-height:1.5}
+    .info-card{
+      margin-top:28px;padding:22px;border-radius:20px;background:var(--soft);
+      border:1px solid var(--line);
     }
-
-    @media (max-width: 640px) {
-      .page {
-        width: 100%;
-        padding: 0;
+    .info-row{
+      display:flex;justify-content:space-between;gap:20px;
+      padding:12px 0;border-bottom:1px solid var(--line);
+    }
+    .info-row:last-child{border-bottom:0}
+    .info-row span{color:var(--muted)}
+    .info-row b{text-align:right}
+    .faq{margin-top:22px}
+    details{border-top:1px solid var(--line);padding:18px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:700;font-size:17px}
+    details p{color:var(--muted);line-height:1.55}
+    .footer{
+      margin-top:40px;padding-top:26px;border-top:1px solid var(--line);
+      color:var(--muted);font-size:13px;line-height:1.7;
+    }
+    .sticky-download{
+      display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);
+    }
+    .sticky-download a{
+      display:block;text-align:center;background:var(--primary);color:#fff;
+      padding:14px;border-radius:999px;font-weight:800;
+    }
+    @media (max-width:700px){
+      .page{padding:0 16px 96px}
+      .topbar-inner{padding:0 16px;height:58px}
+      .brand-mini span:last-child{display:none}
+      .hero{
+        grid-template-columns:86px 1fr;gap:18px;
+        padding:30px 0 22px;
       }
-
-      .hero,
-      .content {
-        border-radius: 0;
-        box-shadow: none;
-      }
-
-      .hero {
-        padding: 34px 20px;
-      }
-
-      .content {
-        padding: 26px 20px 34px;
-      }
-
-      .top-button {
-        right: 14px;
-        bottom: 14px;
-      }
+      .app-icon,.app-icon-fallback{width:86px;height:86px;border-radius:20px}
+      .app-icon-fallback{font-size:44px}
+      .developer{font-size:16px;margin-bottom:5px}
+      h1{font-size:35px;letter-spacing:-1px}
+      .subtitle{font-size:15px}
+      .meta{grid-template-columns:repeat(3,1fr)}
+      .meta-item:nth-child(4){display:none}
+      .screens{grid-auto-columns:72%}
+      .shot,.shot .placeholder{min-height:440px;height:440px}
+      .section-title h2{font-size:26px}
+      .features{grid-template-columns:1fr}
+      .sticky-download{display:block}
+    }
+    @media (max-width:420px){
+      h1{font-size:31px}
+      .meta-value{font-size:14px}
+      .meta-label{font-size:12px}
+      .screens{grid-auto-columns:82%}
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="badge">Barka Tunnel · Android</div>
-      <h1>Politique de confidentialité</h1>
-      <p>
-        Cette page explique de manière claire comment Barka Tunnel traite les informations nécessaires au fonctionnement de l'application et de ses services réseau.
-      </p>
-    </header>
 
-    <main class="content">
-      <div class="intro">
-        <strong>Dernière mise à jour : 2026</strong><br />
-        En utilisant Barka Tunnel, vous reconnaissez avoir pris connaissance de la présente politique de confidentialité.
-      </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-mini">
+      <div class="brand-dot">B</div>
+      <span>Barka Tunnel</span>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Partager" onclick="sharePage()">↗</button>
+      <a class="icon-btn" href="#infos" aria-label="Informations">⋮</a>
+    </div>
+  </div>
+</header>
 
-      <section>
-        <h2>1. Présentation de Barka Tunnel</h2>
-        <p>
-          Barka Tunnel est une application Android destinée à faciliter l'établissement de connexions réseau sécurisées à travers des fonctionnalités de tunnel et de VPN.
-        </p>
-        <p>
-          L'application peut utiliser des paramètres réseau, des configurations de connexion et des informations techniques indispensables à l'établissement et au maintien du service.
-        </p>
-      </section>
+<main class="page">
+  <section class="hero">
+    <img id="appIcon" class="app-icon" src="assets/barka-icon.png" alt="Icône Barka Tunnel"
+         onerror="this.style.display='none';document.getElementById('fallbackIcon').style.display='grid'">
+    <div id="fallbackIcon" class="app-icon-fallback">B</div>
 
-      <section>
-        <h2>2. Informations techniques pouvant être traitées</h2>
-        <p>Selon les fonctionnalités utilisées, Barka Tunnel peut traiter certaines informations techniques, notamment :</p>
-        <ul>
-          <li>l'adresse IP utilisée lors d'une connexion ;</li>
-          <li>l'état et le type de connexion réseau ;</li>
-          <li>des informations techniques nécessaires au fonctionnement du tunnel VPN ;</li>
-          <li>des informations de diagnostic en cas d'erreur ou de problème de connexion ;</li>
-          <li>les données strictement nécessaires à la sécurité, à la stabilité et au bon fonctionnement du service.</li>
-        </ul>
-      </section>
+    <div>
+      <div class="developer">RHAFF SERVICE</div>
+      <h1>Barka Tunnel</h1>
+      <p class="subtitle">VPN Android simple, rapide et sécurisé.</p>
+    </div>
+  </section>
 
-      <section>
-        <h2>3. Utilisation des informations</h2>
-        <p>Les informations techniques traitées peuvent être utilisées uniquement afin de :</p>
-        <ul>
-          <li>établir et maintenir la connexion demandée par l'utilisateur ;</li>
-          <li>assurer le fonctionnement des services VPN et réseau ;</li>
-          <li>identifier et corriger des problèmes techniques ;</li>
-          <li>améliorer la stabilité et la sécurité de l'application ;</li>
-          <li>prévenir les abus et les utilisations anormales du service.</li>
-        </ul>
-      </section>
+  <section class="meta" aria-label="Informations principales">
+    <div class="meta-item">
+      <div class="meta-value">1.1.9.5</div>
+      <div class="meta-label">Version</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-value">Android 7+</div>
+      <div class="meta-label">Compatibilité</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-value">APK</div>
+      <div class="meta-label">Téléchargement</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-value">Officiel</div>
+      <div class="meta-label">RHAFF SERVICE</div>
+    </div>
+  </section>
 
-      <section>
-        <h2>4. Fonctionnement du VPN</h2>
-        <p>
-          Lorsque l'utilisateur active une connexion VPN dans Barka Tunnel, le trafic réseau peut être acheminé à travers l'infrastructure nécessaire au fonctionnement du service.
-        </p>
-        <p>
-          Ce traitement est effectué dans le but de fournir la connexion demandée, d'assurer son fonctionnement technique et de maintenir la sécurité du service.
-        </p>
-      </section>
+  <a class="download" href="downloads/BarkaTunnel.apk" download>
+    Télécharger Barka Tunnel
+  </a>
 
-      <section>
-        <h2>5. Conservation des données</h2>
-        <p>
-          Les informations techniques éventuellement conservées doivent l'être uniquement pendant la durée nécessaire au fonctionnement, au diagnostic, à la sécurité ou à la maintenance du service.
-        </p>
-        <p>
-          Barka Tunnel n'a pas pour objectif de constituer des profils personnels détaillés à partir de l'activité de navigation des utilisateurs.
-        </p>
-      </section>
-
-      <section>
-        <h2>6. Partage des informations</h2>
-        <p>
-          Les informations liées à l'utilisation de Barka Tunnel ne sont pas destinées à être vendues comme données personnelles à des tiers.
-        </p>
-        <p>
-          Certaines données techniques peuvent toutefois être traitées par des prestataires ou infrastructures nécessaires au fonctionnement de l'application, à l'hébergement, à la sécurité ou à la distribution du service.
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Sécurité</h2>
-        <p>
-          Des mesures raisonnables sont mises en œuvre afin de protéger les informations techniques traitées contre les accès non autorisés, les pertes, les modifications ou les divulgations abusives.
-        </p>
-        <p>
-          Aucun système informatique ou réseau ne pouvant garantir une sécurité absolue, Barka Tunnel s'efforce de limiter les risques conformément aux moyens techniques disponibles.
-        </p>
-      </section>
-
-      <section>
-        <h2>8. Permissions Android</h2>
-        <p>
-          Barka Tunnel peut demander certaines autorisations Android lorsque celles-ci sont nécessaires à une fonctionnalité précise de l'application. Ces autorisations doivent être utilisées uniquement pour fournir la fonction concernée.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Services tiers</h2>
-        <p>
-          L'application peut s'appuyer sur des services, serveurs, bibliothèques ou plateformes tiers nécessaires à son fonctionnement, à sa distribution, à la sécurité ou à certaines fonctionnalités techniques.
-        </p>
-        <p>
-          Ces services peuvent appliquer leurs propres règles de confidentialité lorsqu'ils traitent directement certaines données techniques.
-        </p>
-      </section>
-
-      <section>
-        <h2>10. Protection des mineurs</h2>
-        <p>
-          Barka Tunnel n'est pas conçu dans le but de collecter volontairement des données personnelles sensibles concernant des enfants. Si une telle situation est identifiée, les mesures appropriées doivent être prises afin de supprimer les informations concernées lorsque cela est applicable.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. Modifications de cette politique</h2>
-        <p>
-          Cette politique de confidentialité peut être mise à jour afin de refléter des changements dans l'application, ses fonctionnalités, ses obligations légales ou ses pratiques techniques.
-        </p>
-        <p>
-          Toute nouvelle version publiée sur cette page remplace la version précédente à compter de sa date de mise à jour.
-        </p>
-      </section>
-
-      <section>
-        <h2>12. Contact</h2>
-        <p>
-          Pour toute question concernant cette politique de confidentialité ou le traitement des informations liées à Barka Tunnel, l'utilisateur peut contacter l'éditeur de l'application à travers les moyens de contact officiels mis à disposition par RHAFF SERVICE.
-        </p>
-        <div class="note">
-          Éditeur : <strong>RHAFF SERVICE</strong><br />
-          Application : <strong>Barka Tunnel</strong>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      © 2026 RHAFF SERVICE · Barka Tunnel. Tous droits réservés.
-    </footer>
+  <div class="notice">
+    <div>🛡️</div>
+    <div><b>Fichier officiel.</b> Le téléchargement provient directement du site de Barka Tunnel.</div>
   </div>
 
-  <button class="top-button" id="topButton" aria-label="Retour en haut" title="Retour en haut">↑</button>
+  <section class="section">
+    <div class="section-title">
+      <h2>Captures d’écran</h2>
+      <div class="arrow">→</div>
+    </div>
 
-  <script>
-    const topButton = document.getElementById('topButton');
+    <div class="screens">
+      <div class="shot">
+        <img src="assets/screenshot-1.png" alt="Accueil Barka Tunnel"
+             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-1.png</b></div>'">
+      </div>
+      <div class="shot">
+        <img src="assets/screenshot-2.png" alt="Menu Barka Tunnel"
+             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-2.png</b></div>'">
+      </div>
+      <div class="shot">
+        <img src="assets/screenshot-3.png" alt="Journal Barka Tunnel"
+             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-3.png</b></div>'">
+      </div>
+      <div class="shot">
+        <img src="assets/screenshot-4.png" alt="Paramètres Barka Tunnel"
+             onerror="this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Ajoutez ici<br><b>assets/screenshot-4.png</b></div>'">
+      </div>
+    </div>
+  </section>
 
-    window.addEventListener('scroll', () => {
-      topButton.classList.toggle('visible', window.scrollY > 450);
-    });
+  <section class="section">
+    <div class="section-title">
+      <h2>À propos de cette application</h2>
+      <div class="arrow">→</div>
+    </div>
 
-    topButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+    <p class="about">
+      Barka Tunnel est une application VPN Android conçue pour offrir une connexion simple,
+      stable et sécurisée. Elle permet de sélectionner votre réseau, consulter votre adresse IP,
+      suivre le temps de connexion et le temps restant, consulter le journal de connexion,
+      utiliser un code d’activation et accéder rapidement au support.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <strong>⚡ Connexion rapide</strong>
+        <span>Interface simple pour démarrer ou arrêter le tunnel en quelques secondes.</span>
+      </div>
+      <div class="feature">
+        <strong>🌐 Plusieurs réseaux</strong>
+        <span>Prise en charge des réseaux configurés dans Barka Tunnel.</span>
+      </div>
+      <div class="feature">
+        <strong>🧭 IP Finder</strong>
+        <span>Outils intégrés pour consulter et vérifier votre environnement réseau.</span>
+      </div>
+      <div class="feature">
+        <strong>🕘 Journal</strong>
+        <span>Suivi clair des événements de connexion et de l’état du tunnel.</span>
+      </div>
+    </div>
+
+    <div id="infos" class="info-card">
+      <div class="info-row"><span>Version</span><b>1.1.9.5</b></div>
+      <div class="info-row"><span>Package</span><b>com.barkatunnel.app</b></div>
+      <div class="info-row"><span>Android minimum</span><b>7.0</b></div>
+      <div class="info-row"><span>Développeur</span><b>RHAFF SERVICE</b></div>
+      <div class="info-row"><span>Format</span><b>APK Android</b></div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="section-title"><h2>Questions fréquentes</h2></div>
+
+    <details>
+      <summary>Comment installer l’application ?</summary>
+      <p>Téléchargez l’APK, ouvrez le fichier téléchargé puis autorisez l’installation depuis votre navigateur si Android vous le demande.</p>
+    </details>
+    <details>
+      <summary>Pourquoi Android affiche un avertissement ?</summary>
+      <p>Android peut afficher un avertissement pour les applications installées en dehors d’une boutique. Vérifiez toujours que vous téléchargez depuis ce site officiel.</p>
+    </details>
+    <details>
+      <summary>Comment recevoir les nouvelles versions ?</summary>
+      <p>Revenez sur cette page pour télécharger la dernière version publiée de Barka Tunnel.</p>
+    </details>
+  </section>
+
+  <footer class="footer">
+    © 2026 RHAFF SERVICE — Barka Tunnel.<br>
+    Ce site est indépendant et n’est pas affilié à Google Play.
+  </footer>
+</main>
+
+<div class="sticky-download">
+  <a href="downloads/BarkaTunnel.apk" download>Télécharger l’APK</a>
+</div>
+
+<script>
+  async function sharePage(){
+    const data = {
+      title: 'Barka Tunnel',
+      text: 'Télécharger Barka Tunnel depuis le site officiel.',
+      url: window.location.href
+    };
+    if(navigator.share){
+      try{ await navigator.share(data); }catch(e){}
+    }else{
+      try{
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Lien copié.');
+      }catch(e){
+        alert(window.location.href);
+      }
+    }
+  }
+</script>
 </body>
 </html>
