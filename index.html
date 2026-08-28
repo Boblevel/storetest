@@ -8,7 +8,7 @@
   <title>Barka Tunnel — Téléchargement officiel</title>
   <style>
     :root{
-      --bg:#ffffff;
+      --bg:#f6f8fc;
       --text:#202124;
       --muted:#5f6368;
       --line:#e6e8eb;
@@ -30,7 +30,7 @@
     }
     a{text-decoration:none;color:inherit}
     button{font:inherit}
-    .page{max-width:920px;margin:0 auto;padding:0 20px 90px}
+    .page{max-width:960px;margin:0 auto;padding:24px 20px 100px}
     .topbar{
       position:sticky;top:0;z-index:50;
       background:rgba(255,255,255,.96);
@@ -43,19 +43,21 @@
     }
     .brand-mini{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand-dot{
-      width:34px;height:34px;border-radius:10px;
-      display:grid;place-items:center;
-      background:linear-gradient(145deg,#0b57d0,#2382ff);
-      color:#fff;font-weight:800;font-size:20px;
+      width:36px;height:36px;border-radius:11px;
+      display:grid;place-items:center;overflow:hidden;
+      background:#fff;border:1px solid var(--line);
     }
+    .brand-dot img{width:100%;height:100%;object-fit:cover;display:block}
     .top-actions{display:flex;gap:10px}
     .icon-btn{
-      width:42px;height:42px;border:0;background:#fff;border-radius:50%;
-      display:grid;place-items:center;cursor:pointer;
+      width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;
+      display:grid;place-items:center;cursor:pointer;color:#374151;
     }
+    .icon-btn svg{width:18px;height:18px}
     .hero{
       display:grid;grid-template-columns:132px 1fr;gap:26px;
-      align-items:center;padding:44px 0 28px;
+      align-items:center;padding:30px;
+      background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 10px 30px rgba(15,23,42,.08);
     }
     .app-icon{
       width:132px;height:132px;border-radius:28px;
@@ -68,13 +70,15 @@
       display:none;place-items:center;
       font-size:70px;font-weight:800;color:#0b57d0;
     }
-    .developer{color:var(--primary);font-weight:700;font-size:20px;margin-bottom:8px}
+    .developer{color:var(--primary);font-weight:700;font-size:20px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+    .verified-badge{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;flex:0 0 19px}
+    .verified-badge svg{width:19px;height:19px;display:block}
     h1{font-size:48px;line-height:1.06;margin:0 0 10px;letter-spacing:-1.4px}
     .subtitle{font-size:18px;color:var(--muted);margin:0}
     .meta{
       display:grid;grid-template-columns:repeat(4,1fr);
       border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-      padding:18px 0;margin:8px 0 20px;
+      padding:18px;margin:18px 0 20px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 6px 20px rgba(15,23,42,.05);
     }
     .meta-item{text-align:center;padding:0 10px;border-right:1px solid var(--line)}
     .meta-item:last-child{border-right:0}
@@ -87,12 +91,7 @@
       box-shadow:0 2px 6px rgba(11,87,208,.25);
     }
     .download:hover{background:#0842a0}
-    .notice{
-      display:flex;gap:12px;align-items:flex-start;
-      margin:14px 0 34px;color:var(--muted);font-size:14px;
-    }
-    .notice b{color:var(--text)}
-    .section{padding:18px 0 8px}
+    .section{padding:24px;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
     .section-title{
       display:flex;align-items:center;justify-content:space-between;
       margin-bottom:18px;
@@ -100,8 +99,9 @@
     .section-title h2{font-size:30px;margin:0;letter-spacing:-.5px}
     .arrow{
       width:44px;height:44px;border-radius:50%;background:var(--soft);
-      display:grid;place-items:center;font-size:24px;
+      display:grid;place-items:center;color:var(--primary);
     }
+    .arrow svg{width:19px;height:19px}
     .screens{
       display:grid;grid-auto-flow:column;grid-auto-columns:minmax(235px, 29%);
       overflow-x:auto;gap:16px;padding:2px 2px 16px;
@@ -130,7 +130,9 @@
     .feature{
       padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;
     }
-    .feature strong{display:block;margin-bottom:5px}
+    .feature strong{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+    .feature-inline-icon{width:30px;height:30px;border-radius:10px;background:#eef4ff;color:var(--primary);display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px}
+    .feature-inline-icon svg{width:17px;height:17px}
     .feature span{color:var(--muted);font-size:14px;line-height:1.5}
     .info-card{
       margin-top:28px;padding:22px;border-radius:20px;background:var(--soft);
@@ -163,12 +165,12 @@
       padding:14px;border-radius:999px;font-weight:800;
     }
     @media (max-width:700px){
-      .page{padding:0 16px 96px}
+      .page{padding:16px 14px 96px}
       .topbar-inner{padding:0 16px;height:58px}
       .brand-mini span:last-child{display:none}
       .hero{
         grid-template-columns:86px 1fr;gap:18px;
-        padding:30px 0 22px;
+        padding:22px;
       }
       .app-icon,.app-icon-fallback{width:86px;height:86px;border-radius:20px}
       .app-icon-fallback{font-size:44px}
@@ -196,12 +198,12 @@
 <header class="topbar">
   <div class="topbar-inner">
     <div class="brand-mini">
-      <div class="brand-dot">B</div>
+      <div class="brand-dot"><img src="assets/barka-icon.png" alt="Barka Tunnel"></div>
       <span>Barka Tunnel</span>
     </div>
     <div class="top-actions">
-      <button class="icon-btn" aria-label="Partager" onclick="sharePage()">↗</button>
-      <a class="icon-btn" href="#infos" aria-label="Informations">⋮</a>
+      <button class="icon-btn" aria-label="Partager" onclick="sharePage()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 16V3"/><path d="M7 8l5-5 5 5"/></svg></button>
+      <a class="icon-btn" href="#infos" aria-label="Informations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></a>
     </div>
   </div>
 </header>
@@ -213,7 +215,14 @@
     <div id="fallbackIcon" class="app-icon-fallback">B</div>
 
     <div>
-      <div class="developer">RHAFF SERVICE</div>
+      <div class="developer">RHAFF SERVICE
+        <span class="verified-badge" aria-label="Compte certifié" title="Compte certifié">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#0b57d0" d="M12 2.2l2.1 1.4 2.5-.2 1.2 2.2 2.3 1-.2 2.5 1.4 2.1-1.4 2.1.2 2.5-2.3 1-1.2 2.2-2.5-.2L12 20.2l-2.1-1.4-2.5.2-1.2-2.2-2.3-1 .2-2.5-1.4-2.1 1.4-2.1-.2-2.5 2.3-1 1.2-2.2 2.5.2L12 2.2z"/>
+            <path fill="#fff" d="M10.4 15.5L7.2 12.3l1.4-1.4 1.8 1.8 4.9-4.9 1.4 1.4-6.3 6.3z"/>
+          </svg>
+        </span>
+      </div>
       <h1>Barka Tunnel</h1>
       <p class="subtitle">VPN Android simple, rapide et sécurisé.</p>
     </div>
@@ -242,15 +251,11 @@
     Télécharger Barka Tunnel
   </a>
 
-  <div class="notice">
-    <div>🛡️</div>
-    <div><b>Fichier officiel.</b> Le téléchargement provient directement du site de Barka Tunnel.</div>
-  </div>
 
   <section class="section">
     <div class="section-title">
       <h2>Captures d’écran</h2>
-      <div class="arrow">→</div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
     </div>
 
     <div class="screens">
@@ -276,7 +281,7 @@
   <section class="section">
     <div class="section-title">
       <h2>À propos de cette application</h2>
-      <div class="arrow">→</div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
     </div>
 
     <p class="about">
@@ -288,19 +293,19 @@
 
     <div class="features">
       <div class="feature">
-        <strong>⚡ Connexion rapide</strong>
+        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>Connexion rapide</strong>
         <span>Interface simple pour démarrer ou arrêter le tunnel en quelques secondes.</span>
       </div>
       <div class="feature">
-        <strong>🌐 Plusieurs réseaux</strong>
+        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Plusieurs réseaux</strong>
         <span>Prise en charge des réseaux configurés dans Barka Tunnel.</span>
       </div>
       <div class="feature">
-        <strong>🧭 IP Finder</strong>
+        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z"/></svg></span>IP Finder</strong>
         <span>Outils intégrés pour consulter et vérifier votre environnement réseau.</span>
       </div>
       <div class="feature">
-        <strong>🕘 Journal</strong>
+        <strong><span class="feature-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></span>Journal</strong>
         <span>Suivi clair des événements de connexion et de l’état du tunnel.</span>
       </div>
     </div>
